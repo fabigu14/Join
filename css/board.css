@@ -4,6 +4,7 @@ body {
 }
 
 .custom-container {
+    
     display: flex;
     
 }
@@ -11,10 +12,12 @@ body {
 .box {
     
     padding-left: 50px;
+    padding-right: 50px;
     
 }
 
 .grey-box {
+    
     width: 200px;
     height: 80%;
     background-color: #e7e7fa7d;
@@ -26,8 +29,30 @@ body {
 }
 
 h3 {
+    
     font-weight: 600!important;
     text-align: center;
     font-size: 25px !important;
     color: #1f1fa0;
+}
+
+.taskContainer{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid #ffffff;
+    width: 150px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding-top: 16px;
+    text-align: center;
+    background-color: #fdfdfd;
+    color: #1f1fa0;
+    border-left: 16px solid;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px 5px #00000024;
+    position: relative;
+    padding-right: 8px;
 }

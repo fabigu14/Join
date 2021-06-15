@@ -9,35 +9,38 @@
     <link rel="stylesheet" href="../css/board.css">
     <script src="../js/mini_backend.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/board.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <title>Board</title>
 
 </head>
 <body>
     
-    <body onload="init()">
+    <body onload="init(); showTasks()">
         <div id="nav_placeholder"></div>
 
         <div class="custom-container">
             <div class="box">
                 <h3>TO DO</h3>
-                <div class="grey-box">
+                <div id="open" class="grey-box">
+                    
                 </div>
             </div>
             <div class="box">
                 <h3>IN PROGRESS</h3>
-                <div class="grey-box">
+                <div id="closed" class="grey-box">
                 </div>
             </div>
             <div class="box">
                 <h3>TESTING</h3>
-                <div class="grey-box">
+                <div id="" class="grey-box">
                
             </div>
             </div>
             <div class="box">
                 <h3>DONE</h3>
-                <div class="grey-box">
+                <div id="" class="grey-box">
                 </div>
             </div>
            
