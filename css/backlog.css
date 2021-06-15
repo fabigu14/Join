@@ -1,0 +1,103 @@
+
+.container {
+    display: flex;
+    font-family: sans-serif;
+}
+
+.backlogContainer {
+    height: calc(100vh - 64px);
+    width: 1200px;
+    padding: 32px;
+    width: 100%;
+    border-right: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+ 
+.headlineContainer {
+    margin-bottom: 48px;
+}
+
+.headlineContainer>h2 {
+    margin: 0;
+    font-size: 1.7em;
+}
+
+.headlineContainer>p {
+    margin: 0;
+    font-size: .8em;
+    color: #1f1fa0;
+}
+
+.blHeader {
+    display: flex;
+    margin-bottom: 24px;
+    color: #1f1fa0;
+    font-weight: bold;
+}
+
+.assigned {
+    width: 30%;
+}
+
+.category {
+    width: 20%;
+    text-align: center;
+}
+
+.details {
+    width: 50%;
+    text-align: right;
+}
+
+.backlogRows {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.backlogUser {
+    display: flex;
+    width: 30%;
+    align-items: center;
+}
+
+.blUserImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.blUserData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#blUserEmail {
+    text-decoration: none;
+}
+
+.blCategories {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blDetails {
+    width: 50%;
+}
+
+.rowBorder {
+    width: 6px;
+    height: 100%;
+    background-color: aquamarine;
+    position: absolute;
+    left: 0;
+    
+}
