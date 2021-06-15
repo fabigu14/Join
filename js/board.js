@@ -19,7 +19,7 @@ let tasks = [{
 
 }];
 
-function showTasks(){
+function updateHTML(){
 
     let open = tasks.filter(t => t['category'] == 'open');
 
