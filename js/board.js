@@ -1,4 +1,4 @@
-let tasks = [{
+let toDo = [{
 
     'id': 0,
     'title': 'Test1',
@@ -16,12 +16,11 @@ let tasks = [{
     'title': 'Test2',
     'category': 'closed'
 
-
 }];
 
 function updateHTML(){
 
-    let open = tasks.filter(t => t['category'] == 'open');
+    let open = toDo.filter(t => t['category'] == 'open');
 
     document.getElementById('open').innerHTML = '';
 
