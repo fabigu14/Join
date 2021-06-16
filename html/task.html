@@ -1,37 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/task.css">
-    <script src="../js/index.js"></script>
-    <script src="../js/mini_backend.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <title>Add task</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/task.css">
+<script src="../js/index.js"></script>
+<script src="../js/mini_backend.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+<title>Add task</title>
 </head>
-
 <body onload="init()">
-    <div id="nav_placeholder">
-
+<div id="nav_placeholder">
+</div>
+<div class="main-div">
+    <div>
+        <h1>Add task</h1>
+        <span class="subline">Learning Management System Project</span>
     </div>
-    <div class="main-div">
-        <div>
-            <h1>Add task</h1>
-            <span class="subline">Learning Management System Project</span>
-        </div>
-        <div class="add-task">
-            <form action="">
+    <div class="add-task">
+        <form action="">
+            <div class="input-row">
+                <div>
+                    <label for="title">TITLE</label>
+                    <div class="input-field">
+                        <input type="text" id="title" placeholder="title">
+                    </div>
+                </div>
+                <div>
+                    <label for="due_date">DUE DATE</label>
+                    <div class="input-field">
+                        <input type="text" id="due_date" placeholder="due date">
+                        <div class="img-div">
+                            <img class="calender" src="../img/icons8-calendar-150.png" alt="calender">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-row middle-row">
+                <div>
+                    <label for="category">CATEGORY</label>
+                    <div class="input-field">
+                        <input type="text" id="category" placeholder="category">
+                        <div class="img-div">
+                            <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="urgency">URGENCY</label>
+                    <div class="input-field">
+                        <input type="text" id="urgency" placeholder="urgency">
+                        <div class="img-div">
+                            <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div>
+                    <label for="category">DESCRIPTION</label>
+                    <div class="input-field">
+                       <textarea name="description" id="description" cols="30" rows="8"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <label for="assinged">ASSINGED TO</label>
+                    <div id="assinged">
+                        <div>
+                            <img class="profile-img" src="../img/fabi.jpg" alt="profile-img">
+                        </div>
+                        <div>
+                            <button>CANCEL</button>
+                            <button>CREATE TASK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            </form>
-        </div>
-
+        </form>
     </div>
-</body>
-
-</html>
