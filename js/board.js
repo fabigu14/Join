@@ -13,10 +13,12 @@ let toDo = [{
 },{
 
     'id': 2,
-    'title': 'Test2',
-    'category': 'closed'
+    'title': 'Test3',
+    'category': 'open'
 
 }];
+
+let currentDraggedElement;
 
 function updateHTML(){
 
@@ -30,11 +32,11 @@ function updateHTML(){
         
     }
 
-    let closed = tasks.filter(t => t['category'] == 'closed');
+    let closed = toDo.filter(t => t['category'] == 'closed');
 
     document.getElementById('closed').innerHTML = '';
 
-    for (let i = 0; index < closed.length; i++) {
+    for (let i = 0; i < closed.length; i++) {
         const element = closed[i];
         document.getElementById('closed').innerHTML += generateToDoHTML(element);
         
@@ -42,9 +44,28 @@ function updateHTML(){
 
 }
 
+function startdragging(id){
+
+    currentDraggedElement = id;
+
+}
+
 function generateToDoHTML(element){
 
-    return `<div class="taskContainer">${element['title']}</div>`;
+    return `<div draggable="true" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>`;
 
+}
+
+
+function allowDrop(ev) {
+    ev.preventDefault();
+  
+
+}
+
+function moveTo(category){
+
+    toDo[currentDraggedElement]['category'] = category;
+    updateHTML();
 
 }
