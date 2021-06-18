@@ -21,70 +21,69 @@
             <span class="subline">Learning Management System Project</span>
         </div>
         <div class="add-task">
-            <form action="">
-                <div class="input-row">
-                    <div>
-                        <label for="title">TITLE</label>
-                        <div class="input-field">
-                            <input type="text" id="title" placeholder="title">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="due_date">DUE DATE</label>
-                        <div class="input-field">
-                            <input type="text" id="due_date" placeholder="due date">
-                            <div class="img-div crs-pointer">
-                                <img class="calender" src="../img/icons8-calendar-150.png" alt="calender">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-row middle-row">
-                    <div>
-                        <label for="category">CATEGORY</label>
-                        <div class="input-field">
-                            <input type="text" id="category" placeholder="category">
-                            <div class="img-div crs-pointer">
-                                <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="urgency">URGENCY</label>
-                        <div class="input-field">
-                            <input type="text" id="urgency" placeholder="urgency">
-                            <div class="img-div crs-pointer">
-                                <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-row">
-                    <div>
-                        <label for="category">DESCRIPTION</label>
-                        <div class="input-field">
-                            <textarea name="description" id="description" cols="30" rows="8"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="assigned">ASSIGNED TO</label>
-                        <div class="finalize-task">
-                            <div id="assigned_imgs">
-                                <img class="person-assigned" src="../img/fabi.jpg" alt="profile-img">
-                                <div class="add-person crs-pointer">
-                                    <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
-                                </div>
-                                
-                            </div>
-                            <div class="btns">
-                                <button class="crs-pointer" id="cancel_btn">CANCEL</button>
-                                <button class="crs-pointer" id="create_btn">CREATE TASK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </form>
+            <div class="input-row">
+                <div>
+                    <label for="title">TITLE</label>
+                    <div class="input-field">
+                        <input type="text" id="title" placeholder="title">
+                    </div>
+                </div>
+                <div>
+                    <label for="due_date">DUE DATE</label>
+                    <div class="input-field">
+                        <input type="date" id="due_date" placeholder="date">
+                        <!-- <div class="img-div crs-pointer">
+                                <img class="calender" src="../img/icons8-calendar-150.png" alt="calender">
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="input-row middle-row">
+                <div>
+                    <label for="category">CATEGORY</label>
+                    <div class="input-field">
+                        <input type="text" id="category" placeholder="category">
+                        <div class="img-div crs-pointer">
+                            <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="urgency">URGENCY</label>
+                    <div class="input-field">
+                        <input type="text" id="urgency" placeholder="urgency">
+                        <div class="img-div crs-pointer">
+                            <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div>
+                    <label for="category">DESCRIPTION</label>
+                    <div class="input-field">
+                        <textarea name="description" id="description" cols="30" rows="8"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <label for="assigned">ASSIGNED TO</label>
+                    <div class="finalize-task">
+                        <div id="assigned_imgs">
+                            <img class="person-assigned" src="../img/fabi.jpg" alt="profile-img">
+                            <div class="add-person crs-pointer">
+                                <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
+                            </div>
+
+                        </div>
+                        <div class="btns">
+                            <button class="crs-pointer" id="cancel_btn" onclick="clearInput()">CANCEL</button>
+                            <button class="crs-pointer" id="create_btn" onclick="createTask()">CREATE TASK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
