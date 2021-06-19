@@ -14,6 +14,7 @@ function createTask(){
 
 function addToTasks(){
     tasks.push(task);
+    saveTasksOnServer();
 }
 
 function clearInput(){
