@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif !important;
+}
 
 .container {
     display: flex;
@@ -9,11 +13,10 @@
     width: 1200px;
     padding: 32px;
     width: 100%;
-    border-right: 1px solid rgba(0,0,0,.1);
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
     width: 930px;
 }
- 
+
 .headlineContainer {
     margin-bottom: 48px;
 }
@@ -53,12 +56,27 @@
 .backlogRows {
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: #e7e7fa7d;
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 10px;
     position: relative;
+}
+
+.marketing-bl {
     border-left: 6px solid blue;
+}
+
+.product-bl {
+    border-left: 6px solid green;
+}
+
+.sale-bl {
+    border-left: 6px solid yellow;
+}
+
+.default-bl {
+    border-left: 6px solid gray;
 }
 
 .backlogUser {
