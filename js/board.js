@@ -1,4 +1,4 @@
-let toDo = [{
+let allTasks = [{
 
     'id': 0,
     'title': 'Test1',
@@ -22,7 +22,7 @@ let currentDraggedElement;
 
 function updateHTML(){
 
-    let open = toDo.filter(t => t['category'] == 'open');
+    let open = allTasks.filter(t => t['category'] == 'open');
 
     document.getElementById('open').innerHTML = '';
 
@@ -32,7 +32,7 @@ function updateHTML(){
         
     }
 
-    let inProgress = toDo.filter(t => t['category'] == 'inProgress');
+    let inProgress = allTasks.filter(t => t['category'] == 'inProgress');
 
     document.getElementById('inProgress').innerHTML = '';
 
@@ -42,7 +42,7 @@ function updateHTML(){
         
     }
 
-    let testing = toDo.filter(t => t['category'] == 'testing');
+    let testing = allTasks.filter(t => t['category'] == 'testing');
 
     document.getElementById('testing').innerHTML = '';
 
@@ -53,7 +53,7 @@ function updateHTML(){
     }
 
 
-    let closed = toDo.filter(t => t['category'] == 'closed');
+    let closed = allTasks.filter(t => t['category'] == 'closed');
 
     document.getElementById('closed').innerHTML = '';
 
@@ -73,7 +73,7 @@ function startdragging(id){
 
 function generateToDoHTML(element){
 
-    return `<div draggable="true" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>`;
+    return `<div draggable="true" onclick="openContainer(${element['id']})" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>`;
 
 }
 
@@ -86,7 +86,13 @@ function allowDrop(ev) {
 
 function moveTo(category){
 
-    toDo[currentDraggedElement]['category'] = category;
+    allTasks[currentDraggedElement]['category'] = category;
     updateHTML();
+
+}
+
+function openContainer(id){
+    
+    document.getElementById('openContainer').classList.remove('d-none');
 
 }
