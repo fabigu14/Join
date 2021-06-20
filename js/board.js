@@ -1,41 +1,20 @@
 let currentDraggedElement;
-let allTasks = [{
-
-    'id': 0,
-    'title': 'Test1',
-    'category': 'open'
-
-},{
-
-    'id': 1,
-    'title': 'Test2',
-    'category': 'open'
-
-},{
-
-    'id': 2,
-    'title': 'Test3',
-    'category': 'open'
-
-}];
-
-
 
 function updateHTML(){
 
-    let toDos = allTasks.filter(t => t['category'] == 'toDos');
+    let toDos = tasks.filter(t => t['title'] == 'toDos');
     updatetask('toDos', toDos);
-    let inProgress = allTasks.filter(t => t['category'] == 'inProgress');
+    let inProgress = tasks.filter(t => t['title'] == 'inProgress');
     updatetask('inProgress', inProgress);
-    let testing = allTasks.filter(t => t['category'] == 'testing');
+    let testing = tasks.filter(t => t['title'] == 'testing');
     updatetask('testing', testing);
-    let closed = allTasks.filter(t => t['category'] == 'closed');
+    let closed = tasks.filter(t => t['title'] == 'closed');
     updatetask('closed', closed);
   
 
 }
 
-function updatetask(open){
+function updatetask(open,closed){
     
     document.getElementById('open').innerHTML = '';
 
@@ -45,11 +24,30 @@ function updatetask(open){
         
     }
 
+    document.getElementById('closed').innerHTML = '';
+
+    for (let i = 0; i < closed.length; i++) {
+    const element = closed[i];
+    document.getElementById('closed').innerHTML += generateToDoHTML(element);
+        
+    }
+
+
 }
 
 function generateToDoHTML(element){
 
-    return `<div draggable="true" onclick="openContainer(${element['id']})" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>`;
+    return `<div draggable="true" onclick="openContainer(${element['id']})" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>
+            <div id="openContainer" class="openContainer d-none">
+            <div class="infoBox">
+                <h2>Test1</h2>
+            <div class="descriptionContainer"></div>
+            <div class="deleteButton">
+            <button>Delete</button>
+            </div>
+            </div>
+      
+    `;
 
 }
 
@@ -74,6 +72,7 @@ function moveTo(category){
 
 function openContainer(id){
 
-    document.g
+        document.getElementById('openContainer').classList.remove('d-none');
+    
+    }
 
-}

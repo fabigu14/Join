@@ -10,6 +10,7 @@ async function init() {
     tasks = JSON.parse(backend.getItem('tasks')) || [];
     loadNav();
     updateBacklog();
+    updateHTML();
     
 
 }
