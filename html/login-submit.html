@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Submit</title>
+
+    <link rel="stylesheet" href="../css/login-submit.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <script src="../js/index.js"></script>
+    <script src="../js/login-submit.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./mini_backend.js"></script>
+</head>
+
+<body onload="init()">
+
+    <div class="container">
+
+        <div id="nav_placeholder"></div>
+
+        <div class="loginSubmitContainer">
+            <div id="loginContainer" class="loginSubmitBox">
+                <h2>Anmelden</h2>
+
+                <input id="username" class="loginSubmit" placeholder="Username">
+
+                <input id="password" class="loginSubmit" placeholder="Passwort">
+
+                <button class="btn" onclick="login()">Anmelden</button>
+
+                <span>Noch kein Nutzerkonte</span>
+                <a class="toggleLoginSubmit" onclick="showSubmit()">Jetzt registrieren</a>
+            </div>
+
+            <div id="submitContainer" class="loginSubmitBox d-none">
+                <h2>Registrieren</h2>
+
+                <input id="nameInput" class="loginSubmit" placeholder="Name">
+
+                <input id="usernameInput" class="loginSubmit" placeholder="Username">
+
+                <input id="emailInput" class="loginSubmit" placeholder="E-Mail">
+
+                <input id="passwordInput" class="loginSubmit" placeholder="Passwort">
+
+                <button class="btn" onclick="submit()">Registrieren</button>
+
+                <span>Du hast schon ein Konto?</span>
+                <span class="toggleLoginSubmit" onclick="showLogin()">Anmelden</span>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
