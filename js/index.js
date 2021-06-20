@@ -9,6 +9,7 @@ async function init() {
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
     loadNav();
+    updateBacklog();
 }
 
 function loadNav() {
