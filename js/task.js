@@ -14,7 +14,7 @@ function createTask(){
 
 function addToTasks(){
     tasks.push(task);
-    saveTasksOnServer();
+    saveTasksToServer();
 }
 
 function clearInput(){
@@ -23,4 +23,18 @@ function clearInput(){
         currentField.value = '';
      });
      task = {};
+}
+
+function showDropdown(id) {
+    document.getElementById(id + '_dropdown').classList.remove('d-none');
+    document.getElementById(id).classList.add('input-radius');
+}
+
+function setSelection(selection, inputId, dropdown) {
+    document.getElementById(inputId).value = selection;
+    hideDropdown(dropdown);
+}
+
+function hideDropdown(dropdown) {
+    document.getElementById(dropdown).classList.add('d-none');
 }

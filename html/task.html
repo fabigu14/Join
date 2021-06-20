@@ -12,9 +12,13 @@
 </head>
 
 <body onload="init()">
+
+
     <div id="nav_placeholder">
 
     </div>
+
+
     <div class="main-div">
         <div>
             <h1>Add task</h1>
@@ -39,40 +43,61 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="input-row middle-row">
                 <div>
                     <label for="category">CATEGORY</label>
-                    <div class="input-field">
-                        <input type="text" id="category" placeholder="Category">
-                        <div onclick="showDropdown()" class="img-div crs-pointer">
+                    <div id="category" class="input-field">
+                        <input type="text" id="category_value" placeholder="Category">
+                        <div onclick="showDropdown('category')" class="img-div crs-pointer">
                             <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
                     </div>
-                    <div class="dropdown d-none">
-                        <div id="development" class="options" onclick="setChoice()">
-                            <span>Beispiel</span>
+                    <div id="category_dropdown" class="dropdown d-none">
+                        <div id="development" class="options" onclick="setSelection('Development', 'category_value', 'category_dropdown')">
+                            <span>Development</span>
                         </div>
-                        <div id="" class="options" onclick="setChoice()">
-                            <span>Beispiel</span>
+                        <div id="design" class="options" onclick="setSelection('Design', 'category_value', 'category_dropdown')">
+                            <span>Design</span>
                         </div>
-                        <div id="" class="options" onclick="setChoice()">
-                            <span>Beispiel</span>
+                        <div id="testing" class="options" onclick="setSelection('Testing', 'category_value', 'category_dropdown')">
+                            <span>Testing</span>
                         </div>
-                        <div id="management" class="options bottom-element" onclick="setChoice()">
-                            <span>Beispiel</span>
+                        <div id="management" class="options bottom-element" onclick="setSelection('Management', 'category_value', 'category_dropdown')">
+                            <span>Management</span>
                         </div>
                     </div>
                 </div>
+
+
                 <div>
+
                     <label for="urgency">URGENCY</label>
-                    <div class="input-field">
-                        <input type="text" id="urgency" placeholder="Urgency">
-                        <div class="img-div crs-pointer">
-                            <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
+                    <div id="urgency" class="input-field">
+                        <input type="text" id="urgency_value" placeholder="Urgency">
+                        <div onclick="showDropdown('urgency')" class="img-div crs-pointer">
+                            <img  class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
                     </div>
+
+                    <div id="urgency_dropdown" class="dropdown d-none">
+                        <div id="low" class="options" onclick="setSelection('Low', 'urgency_value', 'urgency_dropdown')">
+                            <span>Low</span>
+                        </div>
+                        <div id="medium" class="options" onclick="setSelection('Medium', 'urgency_value', 'urgency_dropdown')">
+                            <span>Medium</span>
+                        </div>
+                        <div id="testing" class="options" onclick="setSelection('High', 'urgency_value', 'urgency_dropdown')">
+                            <span>High</span>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
+
+
+
             <div class="input-row">
                 <div>
                     <label for="category">DESCRIPTION</label>
