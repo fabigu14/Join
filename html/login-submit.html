@@ -32,7 +32,7 @@
                 <button class="btn" onclick="login()">Anmelden</button>
 
                 <span>Noch kein Nutzerkonte</span>
-                <a class="toggleLoginSubmit" onclick="showSubmit()">Jetzt registrieren</a>
+                <a class="toggleLoginSubmit" onclick="toggleLoginSubmit()">Jetzt registrieren</a>
             </div>
 
             <div id="submitContainer" class="loginSubmitBox d-none">
@@ -46,10 +46,10 @@
 
                 <input id="passwordInput" class="loginSubmit" placeholder="Passwort">
 
-                <button class="btn" onclick="submit()">Registrieren</button>
+                <button class="btn" onclick="toggleLoginSubmit()">Registrieren</button>
 
                 <span>Du hast schon ein Konto?</span>
-                <span class="toggleLoginSubmit" onclick="showLogin()">Anmelden</span>
+                <span class="toggleLoginSubmit" onclick="toggleLoginSubmit()">Anmelden</span>
 
             </div>
         </div>
