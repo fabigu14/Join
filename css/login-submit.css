@@ -1,10 +1,15 @@
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif !important;
+}
+
 .d-none {
     display: none !important;
 }
 
 .container {
     display: flex;
-
+    max-width: 930px;
 }
 
 .loginSubmitContainer {
