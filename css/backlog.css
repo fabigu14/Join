@@ -10,15 +10,18 @@ body {
 
 .backlogContainer {
     height: calc(100vh - 64px);
-    width: 1200px;
     padding: 32px;
-    width: 100%;
     border-right: 1px solid rgba(0, 0, 0, .1);
     width: 930px;
+    position: relative;
+    overflow: scroll;
 }
 
 .headlineContainer {
-    margin-bottom: 48px;
+    position: fixed;
+    width: 913px;
+    background-color: white;
+    z-index: 1;
 }
 
 .headlineContainer>h2 {
@@ -30,6 +33,7 @@ body {
     margin: 0;
     font-size: .8em;
     color: #1f1fa0;
+    margin-bottom: 48px;
 }
 
 .blHeader {
@@ -37,6 +41,10 @@ body {
     margin-bottom: 24px;
     color: #1f1fa0;
     font-weight: bold;
+}
+
+#backlogContent {
+    margin-top: 155px;
 }
 
 .assigned {
