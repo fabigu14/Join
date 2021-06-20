@@ -1,3 +1,4 @@
+let currentDraggedElement;
 let allTasks = [{
 
     'id': 0,
@@ -18,56 +19,31 @@ let allTasks = [{
 
 }];
 
-let currentDraggedElement;
+
 
 function updateHTML(){
 
-    let open = allTasks.filter(t => t['category'] == 'open');
-
-    document.getElementById('open').innerHTML = '';
-
-    for (let i = 0; i < open.length; i++) {
-        const element = open[i];
-        document.getElementById('open').innerHTML += generateToDoHTML(element);
-        
-    }
-
+    let toDos = allTasks.filter(t => t['category'] == 'toDos');
+    updatetask('toDos', toDos);
     let inProgress = allTasks.filter(t => t['category'] == 'inProgress');
-
-    document.getElementById('inProgress').innerHTML = '';
-
-    for (let i = 0; i < inProgress.length; i++) {
-        const element = inProgress[i];
-        document.getElementById('inProgress').innerHTML += generateToDoHTML(element);
-        
-    }
-
+    updatetask('inProgress', inProgress);
     let testing = allTasks.filter(t => t['category'] == 'testing');
-
-    document.getElementById('testing').innerHTML = '';
-
-    for (let i = 0; i < testing.length; i++) {
-        const element = testing[i];
-        document.getElementById('testing').innerHTML += generateToDoHTML(element);
-        
-    }
-
-
+    updatetask('testing', testing);
     let closed = allTasks.filter(t => t['category'] == 'closed');
-
-    document.getElementById('closed').innerHTML = '';
-
-    for (let i = 0; i < closed.length; i++) {
-        const element = closed[i];
-        document.getElementById('closed').innerHTML += generateToDoHTML(element);
-        
-    }
+    updatetask('closed', closed);
+  
 
 }
 
-function startdragging(id){
+function updatetask(open){
+    
+    document.getElementById('open').innerHTML = '';
 
-    currentDraggedElement = id;
+    for (let i = 0; i < open.length; i++) {
+    const element = open[i];
+    document.getElementById('open').innerHTML += generateToDoHTML(element);
+        
+    }
 
 }
 
@@ -77,6 +53,11 @@ function generateToDoHTML(element){
 
 }
 
+function startdragging(id){
+
+    currentDraggedElement = id;
+
+}
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -92,7 +73,7 @@ function moveTo(category){
 }
 
 function openContainer(id){
-    
-    document.getElementById('openContainer').classList.remove('d-none');
+
+    document.g
 
 }
