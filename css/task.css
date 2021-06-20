@@ -146,3 +146,33 @@ input:focus{
     border: none;
     background-color: rgba(0, 0, 0, 0);
 }
+
+.dropdown{
+    box-shadow: 0px 0px 6px 1px #8080805e;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 4px solid #1f1fa0;
+    position: absolute;
+    width: 392px;
+}
+
+.options{
+    background-color: white;
+    padding: 10px 10px;
+    font-size: 1.2em;
+}
+
+.options:hover{
+    background-color: #1f1fa0;
+    color: white;
+}
+
+.bottom-element{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-bottom: 10px;
+}
+
+.d-none{
+    display: none;
+}

@@ -26,7 +26,7 @@
                 <div>
                     <label for="title">TITLE</label>
                     <div class="input-field">
-                        <input type="text" id="title" placeholder="title">
+                        <input type="text" id="title" placeholder="Title">
                     </div>
                 </div>
                 <div>
@@ -43,16 +43,30 @@
                 <div>
                     <label for="category">CATEGORY</label>
                     <div class="input-field">
-                        <input type="text" id="category" placeholder="category">
-                        <div class="img-div crs-pointer">
+                        <input type="text" id="category" placeholder="Category">
+                        <div onclick="showDropdown()" class="img-div crs-pointer">
                             <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
+                        </div>
+                    </div>
+                    <div class="dropdown d-none">
+                        <div id="development" class="options" onclick="setChoice()">
+                            <span>Beispiel</span>
+                        </div>
+                        <div id="" class="options" onclick="setChoice()">
+                            <span>Beispiel</span>
+                        </div>
+                        <div id="" class="options" onclick="setChoice()">
+                            <span>Beispiel</span>
+                        </div>
+                        <div id="management" class="options bottom-element" onclick="setChoice()">
+                            <span>Beispiel</span>
                         </div>
                     </div>
                 </div>
                 <div>
                     <label for="urgency">URGENCY</label>
                     <div class="input-field">
-                        <input type="text" id="urgency" placeholder="urgency">
+                        <input type="text" id="urgency" placeholder="Urgency">
                         <div class="img-div crs-pointer">
                             <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
