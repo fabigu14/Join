@@ -1,9 +1,7 @@
-function showSubmit() {
-    document.getElementById('submitContainer').classList.remove('d-none');
-    document.getElementById('loginContainer').classList.add('d-none');
-}
+function toggleLoginSubmit() {
+    let login = document.getElementById('loginContainer');
+    let submit = document.getElementById('submitContainer');
 
-function showLogin() {
-    document.getElementById('loginContainer').classList.remove('d-none');
-    document.getElementById('submitContainer').classList.add('d-none');
+    login.classList.toggle('d-none');
+    submit.classList.toggle('d-none');
 }
