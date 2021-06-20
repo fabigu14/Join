@@ -63,16 +63,20 @@ body {
     position: relative;
 }
 
-.marketing-bl {
+.development-bl {
     border-left: 6px solid blue;
 }
 
-.product-bl {
+.design-bl {
     border-left: 6px solid green;
 }
 
-.sale-bl {
+.testing-bl {
     border-left: 6px solid yellow;
+}
+
+.management-bl {
+    border-left: 6px solid red;
 }
 
 .default-bl {

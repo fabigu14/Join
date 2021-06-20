@@ -1,69 +1,8 @@
-let taskss = [{
-    'name': 'Darrin S.Jones',
-    'email': 'Darrin@gmail.com',
-    'img': '../img/fabi.jpg',
-    'title': 'test1',
-    'due_date': '19.06.2021',
-    'category': 'Marketing',
-    'urgency': 'important',
-    'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit.'
-},
-{
-    'name': 'Darrin S.Jones',
-    'email': 'Darrin@gmail.com',
-    'img': '../img/fabi.jpg',
-    'title': 'test1',
-    'due_date': '19.06.2021',
-    'category': 'Product',
-    'urgency': 'important',
-    'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit.'
-},
-{
-    'name': 'Darrin S.Jones',
-    'email': 'Darrin@gmail.com',
-    'img': '../img/fabi.jpg',
-    'title': 'test1',
-    'due_date': '19.06.2021',
-    'category': 'Product',
-    'urgency': 'important',
-    'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit.'
-},
-{
-    'name': 'Darrin S.Jones',
-    'email': 'Darrin@gmail.com',
-    'img': '../img/fabi.jpg',
-    'title': 'test1',
-    'due_date': '19.06.2021',
-    'category': 'Sale',
-    'urgency': 'important',
-    'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit.'
-},
-{
-    'name': 'Darrin S.Jones',
-    'email': 'Darrin@gmail.com',
-    'img': '../img/fabi.jpg',
-    'title': 'test1',
-    'due_date': '19.06.2021',
-    'category': 'Sale',
-    'urgency': 'important',
-    'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit.'
-},
-{
-    'name': 'Darrin S.Jones',
-    'email': 'Darrin@gmail.com',
-    'img': '../img/fabi.jpg',
-    'title': 'test1',
-    'due_date': '19.06.2021',
-    'category': '',
-    'urgency': 'important',
-    'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit.'
-}];
-
 function updateBacklog() {
     clearBacklog();
 
-    for (let i = 0; i < taskss.length; i++) {
-        const task = taskss[i];
+    for (let i = 0; i < tasks.length; i++) {
+        const task = tasks[i];
         backlogContent.innerHTML += renderBacklogRows(task, i);
         
         checkCategory(i);
@@ -90,17 +29,20 @@ function renderBacklogRows(task, i) {
 }
 
 function checkCategory(i) {
-    let blCategory = taskss[i]['category'];
+    let blCategory = tasks[i]['category'];
 
     switch(blCategory) {
-        case 'Marketing':
-            result = 'marketing-bl';
+        case 'Development':
+            result = 'development-bl';
             break;
-        case 'Product':
-            result = 'product-bl';
+        case 'Design':
+            result = 'design-bl';
             break;
-        case 'Sale':
-            result = 'sale-bl';
+        case 'Testing':
+            result = 'testing-bl';
+            break;
+        case 'Management':
+            result = 'management-bl';
             break;
         default:
             result = 'default-bl';
