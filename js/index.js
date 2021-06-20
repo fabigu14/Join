@@ -1,9 +1,10 @@
 let users = [];
 let tasks = [];
 
-setURL('http://developerakademie.com/smallest_backend_ever');
+
 
 async function init() {
+    setURL('http://gruppe-83.developerakademie.com/smallest_backend_ever');
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
