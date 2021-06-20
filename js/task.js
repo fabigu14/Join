@@ -1,5 +1,5 @@
 inputFields = ['title', 'due_date', 'category', 'urgency', 'description'];
-task = {}
+task = {};
 usersAssigned = [];
 
 function createTask(){
@@ -8,6 +8,7 @@ function createTask(){
        let inputValue = currentField.value;
        task[inputField] = inputValue;
     });
+    
     addToTasks();
     clearInput();
 }

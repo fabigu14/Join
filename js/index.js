@@ -17,10 +17,10 @@ function loadNav() {
     })
 }
 
-function saveTasksToServer(){
+function saveTasksToServer() {
     backend.setItem('tasks', JSON.stringify(tasks));
 }
 
 function saveUsersToServer(params) {
-    
+
 }
