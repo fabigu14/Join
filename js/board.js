@@ -1,5 +1,6 @@
 let currentDraggedElement;
 
+
 function updateHTML(){
 
     let toDos = tasks.filter(t => t['title'] == 'toDos');
@@ -14,7 +15,7 @@ function updateHTML(){
 
 }
 
-function updatetask(open,closed){
+function updatetask(open){
     
     document.getElementById('open').innerHTML = '';
 
@@ -37,10 +38,14 @@ function updatetask(open,closed){
 
 function generateToDoHTML(element){
 
-    return `<div draggable="true" onclick="openContainer(${element['id']})" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>
+    return `<div draggable="true" onclick="openContainer(${element['title']})" ondragstart="startdragging(${element['title']})" class="taskContainer">${element['title']}</div>
+            
             <div id="openContainer" class="openContainer d-none">
             <div class="infoBox">
-                <h2>Test1</h2>
+            <div class="headlinebox">
+            <div class="headline"><h2>test</h2></div>
+            <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
+            </div>
             <div class="descriptionContainer"></div>
             <div class="deleteButton">
             <button>Delete</button>
@@ -70,8 +75,13 @@ function moveTo(category){
 
 }
 
-function openContainer(id){
+function openContainer(){
 
-        document.getElementById('openContainer').classList.remove('d-none');
-    
+    document.getElementById('openContainer').classList.remove('d-none');
+        
     }
+
+function closeContainer(){
+
+    document.getElementById('openContainer').classList.add('d-none');
+}
