@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Submit</title>
+
+    <link rel="stylesheet" href="../css/login-submit.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <script src="../js/index.js"></script>
+    <script src="../js/login-submit.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/mini_backend.js"></script>
+</head>
+
+<body onload="init()">
+
+    <div class="container">
+
+        <div id="nav_placeholder"></div>
+
+        <div class="loginSubmitContainer">
+            <div class="slideBox">
+                <div id="loginContainer" class="loginSubmitBox">
+                    <h2 class="loginHeader">Anmelden</h2>
+
+                    <input id="username" class="loginSubmit" placeholder="Username" required>
+
+                    <input id="password" class="loginSubmit" placeholder="Passwort" required>
+
+                    <button class="btn loginBtn" onclick="login()">Anmelden</button>
+
+                    <span>Noch kein Nutzerkonte</span>
+                    <a class="toggleLoginSubmit loginLink" onclick="goToSubmit()">Jetzt registrieren</a>
+                </div>
+
+                <div id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
+                    <h2>Registrieren</h2>
+
+                    <input id="nameInput" class="loginSubmit" placeholder="Name" required>
+
+                    <input id="usernameInput" class="loginSubmit" placeholder="Username" required>
+
+                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail" type="email" required>
+
+                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort" type="password" required>
+
+                    <button class="btn" onclick="addUser()">Registrieren</button>
+
+                    <span>Du hast schon ein Konto?</span>
+                    <span class="toggleLoginSubmit" onclick="goToLogin()">Anmelden</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.container {
+    display: flex;
+    max-width: 930px;
+}
+
+.loginSubmitContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.loginSubmitBox {
+    width: 400px;
+    height: 384.438px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e7fa7d;
+    border-radius: 20px;
+    position: absolute;
+    transition: transform 225ms ease-in-out;
+}
+
+.loginSubmit {
+    padding: 8px;
+    width: 200px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    width: 100px;
+    padding: 16px;
+    background-color: #1f1fa0;
+    color: white;
+    cursor: pointer;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.loginSubmit, .btn {
+    border: none;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #6565ec;
+    transition: all 225ms ease-in-out;
+}
+
+span {
+    color: rgba(0, 0, 0, 0.8);
+    cursor: default;
+}
+
+.toggleLoginSubmit {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 21px;
+    cursor: pointer;
+}
+
+.toggleLoginSubmit:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.slideBox {
+    height: 384.438px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.loginLink {
+    margin-bottom: -2px;
+}
+
+.loginHeader {
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+.loginBtn {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
