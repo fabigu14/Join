@@ -1,19 +1,19 @@
 let toDos = [{
 
     'id': 0,
-    'title': 'Test',
+    'title': 'Kochen',
     'category': 'open'
 
 },{
 
     'id': 1,
-    'title': 'Test1',
+    'title': 'Putzen',
     'category': 'open'
 
 },{
 
     'id': 2,
-    'title': 'Test2',
+    'title': 'Einkaufen',
     'category': 'open'
 
 }];
@@ -63,8 +63,6 @@ function updateHTML(){
         
     }
 
-    
-
 }
 
 function generateToDoHTML(element){
@@ -73,7 +71,7 @@ function generateToDoHTML(element){
             <div id="openContainer" class="openContainer d-none">
             <div class="infoBox">
             <div class="headlinebox">
-            <div class="headline"><h2>test</h2></div>
+            <div class="headline"><h2>${element['title']}</h2></div>
             <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
             </div>
             <div class="descriptionContainer"></div>
