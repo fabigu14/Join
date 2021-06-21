@@ -11,6 +11,7 @@ body {
 .backlogContainer {
     height: calc(100vh - 64px);
     padding: 32px;
+    padding-top: 0;
     border-right: 1px solid rgba(0, 0, 0, .1);
     width: 930px;
     position: relative;
@@ -18,10 +19,11 @@ body {
 }
 
 .headlineContainer {
-    position: fixed;
-    width: 913px;
+    position: sticky;
     background-color: white;
     z-index: 1;
+    top: 0;
+    padding-top: 40px;
 }
 
 .headlineContainer>h2 {
@@ -44,7 +46,7 @@ body {
 }
 
 #backlogContent {
-    margin-top: 155px;
+    margin-top: 32px;
 }
 
 .assigned {
