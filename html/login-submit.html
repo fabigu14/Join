@@ -22,35 +22,37 @@
         <div id="nav_placeholder"></div>
 
         <div class="loginSubmitContainer">
-            <div id="loginContainer" class="loginSubmitBox">
-                <h2>Anmelden</h2>
+            <div class="slideBox">
+                <div id="loginContainer" class="loginSubmitBox">
+                    <h2 class="loginHeader">Anmelden</h2>
 
-                <input id="username" class="loginSubmit" placeholder="Username">
+                    <input id="username" class="loginSubmit" placeholder="Username">
 
-                <input id="password" class="loginSubmit" placeholder="Passwort">
+                    <input id="password" class="loginSubmit" placeholder="Passwort">
 
-                <button class="btn" onclick="login()">Anmelden</button>
+                    <button class="btn loginBtn" onclick="login()">Anmelden</button>
 
-                <span>Noch kein Nutzerkonte</span>
-                <a class="toggleLoginSubmit" onclick="toggleLoginSubmit()">Jetzt registrieren</a>
-            </div>
+                    <span>Noch kein Nutzerkonte</span>
+                    <a class="toggleLoginSubmit loginLink" onclick="goToSubmit()">Jetzt registrieren</a>
+                </div>
 
-            <div id="submitContainer" class="loginSubmitBox d-none">
-                <h2>Registrieren</h2>
+                <div id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
+                    <h2>Registrieren</h2>
 
-                <input id="nameInput" class="loginSubmit" placeholder="Name">
+                    <input id="nameInput" class="loginSubmit" placeholder="Name">
 
-                <input id="usernameInput" class="loginSubmit" placeholder="Username">
+                    <input id="usernameInput" class="loginSubmit" placeholder="Username">
 
-                <input id="emailInput" class="loginSubmit" placeholder="E-Mail">
+                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail">
 
-                <input id="passwordInput" class="loginSubmit" placeholder="Passwort">
+                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort">
 
-                <button class="btn" onclick="toggleLoginSubmit()">Registrieren</button>
+                    <button class="btn" onclick="submit()">Registrieren</button>
 
-                <span>Du hast schon ein Konto?</span>
-                <span class="toggleLoginSubmit" onclick="toggleLoginSubmit()">Anmelden</span>
+                    <span>Du hast schon ein Konto?</span>
+                    <span class="toggleLoginSubmit" onclick="goToLogin()">Anmelden</span>
 
+                </div>
             </div>
         </div>
     </div>

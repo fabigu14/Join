@@ -4,7 +4,7 @@ function updateBacklog() {
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
         backlogContent.innerHTML += renderBacklogRows(task, i);
-        
+
         checkCategory(i);
     }
 }
@@ -15,7 +15,7 @@ function clearBacklog() {
 }
 
 function renderBacklogRows(task, i) {
-    return     `<div id="backlogRows_${i}" class="backlogRows">
+    return `<div id="backlogRows_${i}" class="backlogRows">
                     <div class="backlogUser">
                         <img id="blUserImg_${i}" class="blUserImg" src="${task['img']}">
                         <div class="blUserData">
@@ -31,7 +31,7 @@ function renderBacklogRows(task, i) {
 function checkCategory(i) {
     let blCategory = tasks[i]['category'];
 
-    switch(blCategory) {
+    switch (blCategory) {
         case 'Development':
             result = 'development-bl';
             break;
