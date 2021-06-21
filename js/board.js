@@ -3,8 +3,8 @@ let currentDraggedElement;
 
 function updateHTML(){
 
-    let open = tasks.filter(t => t['title'] == 'toDos');
-    updatetask('open', open);
+    let toDos = tasks.filter(t => t['title'] == 'toDos');
+    updatetask('toDos', toDos);
     let inProgress = tasks.filter(t => t['title'] == 'inProgress');
     updatetask('inProgress', inProgress);
     let testing = tasks.filter(t => t['title'] == 'testing');
@@ -25,14 +25,11 @@ function updatetask(open){
         
     }
 
-
-
 }
 
 function generateToDoHTML(element){
 
-    return `<div draggable="true" onclick="openContainer(${element['id']})" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>
-            
+    return `<div draggable="true" onclick="openContainer(${element['title']})" ondragstart="startdragging(${element['title']})" class="taskContainer">${element['title']}</div>
             <div id="openContainer" class="openContainer d-none">
             <div class="infoBox">
             <div class="headlinebox">
@@ -72,6 +69,7 @@ function openContainer(){
 
     document.getElementById('openContainer').classList.remove('d-none');
         
+    
     }
 
 function closeContainer(){
