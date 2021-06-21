@@ -3,8 +3,8 @@ let currentDraggedElement;
 
 function updateHTML(){
 
-    let toDos = tasks.filter(t => t['title'] == 'toDos');
-    updatetask('toDos', toDos);
+    let open = tasks.filter(t => t['title'] == 'toDos');
+    updatetask('open', open);
     let inProgress = tasks.filter(t => t['title'] == 'inProgress');
     updatetask('inProgress', inProgress);
     let testing = tasks.filter(t => t['title'] == 'testing');
@@ -21,24 +21,17 @@ function updatetask(open){
 
     for (let i = 0; i < open.length; i++) {
     const element = open[i];
-    document.getElementById('open').innerHTML += generateToDoHTML(element);
+    document.getElementById('open').innerHTML = generateToDoHTML(element);
         
     }
 
-    document.getElementById('closed').innerHTML = '';
-
-    for (let i = 0; i < closed.length; i++) {
-    const element = closed[i];
-    document.getElementById('closed').innerHTML += generateToDoHTML(element);
-        
-    }
 
 
 }
 
 function generateToDoHTML(element){
 
-    return `<div draggable="true" onclick="openContainer(${element['title']})" ondragstart="startdragging(${element['title']})" class="taskContainer">${element['title']}</div>
+    return `<div draggable="true" onclick="openContainer(${element['id']})" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>
             
             <div id="openContainer" class="openContainer d-none">
             <div class="infoBox">
