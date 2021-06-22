@@ -9,7 +9,7 @@ async function init() {
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
-    updateBacklog();
+    // updateBacklog();
   
 }
 
@@ -23,6 +23,6 @@ function saveTasksToServer() {
     backend.setItem('tasks', JSON.stringify(tasks));
 }
 
-function saveUsersToServer(params) {
-
+function saveUsersToServer() {
+    backend.setItem('users', JSON.stringify(users));
 }

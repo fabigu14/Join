@@ -4,6 +4,7 @@
 <script src="../js/index.js"></script>
 <script src="../js/mini_backend.js"></script>
 <script src="../js/task.js"></script>
+<script src="../js/backlog.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -13,7 +14,9 @@
 
 <body onload="init()">
 
+<div id="overlay" class="d-none" onclick="hideDropdown()">
 
+</div>
     <div id="nav_placeholder">
 
     </div>
@@ -55,16 +58,16 @@
                         </div>
                     </div>
                     <div id="category_dropdown" class="dropdown d-none">
-                        <div id="development" class="options" onclick="setSelection('Development', 'category_value', 'category_dropdown')">
+                        <div id="development" class="options" onclick="setSelection('Development', 'category_value')">
                             <span>Development</span>
                         </div>
-                        <div id="design" class="options" onclick="setSelection('Design', 'category_value', 'category_dropdown')">
+                        <div id="design" class="options" onclick="setSelection('Design', 'category_value')">
                             <span>Design</span>
                         </div>
-                        <div id="testing" class="options" onclick="setSelection('Testing', 'category_value', 'category_dropdown')">
+                        <div id="testing" class="options" onclick="setSelection('Testing', 'category_value')">
                             <span>Testing</span>
                         </div>
-                        <div id="management" class="options bottom-element" onclick="setSelection('Management', 'category_value', 'category_dropdown')">
+                        <div id="management" class="options bottom-element" onclick="setSelection('Management', 'category_value')">
                             <span>Management</span>
                         </div>
                     </div>
@@ -82,13 +85,13 @@
                     </div>
 
                     <div id="urgency_dropdown" class="dropdown d-none">
-                        <div id="low" class="options" onclick="setSelection('Low', 'urgency_value', 'urgency_dropdown')">
+                        <div id="low" class="options" onclick="setSelection('Low', 'urgency_value')">
                             <span>Low</span>
                         </div>
-                        <div id="medium" class="options" onclick="setSelection('Medium', 'urgency_value', 'urgency_dropdown')">
+                        <div id="medium" class="options" onclick="setSelection('Medium', 'urgency_value')">
                             <span>Medium</span>
                         </div>
-                        <div id="testing" class="options" onclick="setSelection('High', 'urgency_value', 'urgency_dropdown')">
+                        <div id="testing" class="options" onclick="setSelection('High', 'urgency_value')">
                             <span>High</span>
                         </div>
                     </div>

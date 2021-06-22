@@ -5,7 +5,9 @@
 //     login.classList.toggle('d-none');
 //     submit.classList.toggle('d-none');
 // }
-
+let inputIds = ['nameInput', 'usernameInput', 'emailInput', 'passwordInput'];
+let requestedFields = ['name', 'username', 'email', 'password'];
+let user = {}
 
 function goToSubmit() {
     let login = document.getElementById('loginContainer');
@@ -21,26 +23,28 @@ function goToLogin() {
 }
 
 function addUser() {
-    let name = document.getElementById('nameInput');
-    let username = document.getElementById('usernameInput');
-    let email = document.getElementById('emailInput');
-    let password = document.getElementById('passwordInput');
 
-    let user = {
-        'name': name.value,
-        'username': username.value,
-        'email': email.value,
-        'password': password.value
-    };
-    name.value = '';
-    username.value = '';
-    email.value = '';
-    password.value = '';
-
+    for (let i = 0; i < inputIds.length; i++) {
+        const id = inputIds[i];
+        let input = document.getElementById(id);
+        user[requestedFields[i]] = input.value;
+    }
+    addDefaultImg();
+    clearInput();
     users.push(user);
-    backend.setItem('users', JSON.stringify(users));
+    saveUsersToServer();
 }
 
+function addDefaultImg(){
+    user['img'] = 'img/defaultUser.png';
+}
+
+function clearInput(){
+    inputIds.forEach(id => {
+       let currentField =  document.getElementById(id);
+       currentField.value = '';
+    });
+}
 // function deleteUser(name) {
 //     backend.deleteItem('users');
 //   }
