@@ -103,3 +103,19 @@ span {
 #avatarImg{
     height: 20px;
 }
+
+@media (max-width: 930px) {
+    .container {
+        display: inherit;
+    }
+    .slideBox {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .slideBox {
+        width: 300px;
+        border-radius: 20px;
+    }
+} 
