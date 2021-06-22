@@ -74,8 +74,8 @@ function generateToDoHTML(element){
             <div class="headline"><h2>${element['title']}</h2></div>
             <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
             </div>
-            <div class="descriptionContainer"></div>
-            <div class="deleteButton">
+            <div class="descriptionContainer">${element['title']}</div>
+            <div onclick="deletetasks()" class="deleteButton">
             <button>Delete</button>
             </div>
             </div>
@@ -124,4 +124,11 @@ function openContainer(){
 function closeContainer(){
 
     document.getElementById('openContainer').classList.add('d-none');
+}
+
+function deletetasks(id){
+
+    toDos.splice(id);
+    updateHTML();
+
 }
