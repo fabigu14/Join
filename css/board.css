@@ -149,3 +149,9 @@ h3 {
     padding-top: 15px;
     cursor: pointer;
 }
+
+.grey-box-highlight {
+
+    background-color: rgb(0, 0, 0, 0.1);
+
+}

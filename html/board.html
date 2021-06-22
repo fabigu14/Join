@@ -23,23 +23,23 @@
         <div class="custom-container">
             <div class="box">
                 <h3>TO DO</h3>
-                <div id="open" class="grey-box" ondrop="moveTo('open')" ondragover="allowDrop(event)">
+                <div id="toDo" class="grey-box" ondrop="moveTo('toDo')" ondragleave="removehighlight('toDo')" ondragover="allowDrop(event); highlight('open')">
                 </div>
             </div>
             <div class="box">
                 <h3>IN PROGRESS</h3>
-                <div id="inProgress" class="grey-box" ondrop="moveTo('inProgress')" ondragover="allowDrop(event)">
+                <div id="inProgress" class="grey-box" ondrop="moveTo('inProgress')" ondragleave="removehighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
                 </div>
             </div>
             <div class="box">
                 <h3>TESTING</h3>
-                <div id="testing" class="grey-box" ondrop="moveTo('testing')" ondragover="allowDrop(event)">
+                <div id="testing" class="grey-box" ondrop="moveTo('testing')" ondragleave="removehighlight('testing')" ondragover="allowDrop(event); highlight('testing')">
                
             </div>
             </div>
             <div class="box">
                 <h3>DONE</h3>
-                <div id="done" class="grey-box" ondrop="moveTo('done')" ondragover="allowDrop(event)">
+                <div id="done" class="grey-box" ondrop="moveTo('done')" ondragleave="removehighlight('done')" ondragover="allowDrop(event); highlight('done')">
                 </div>
             </div>
            

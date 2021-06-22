@@ -1,34 +1,34 @@
+let currentDraggedElement;
+
 let toDos = [{
 
     'id': 0,
     'title': 'Kochen',
-    'category': 'open'
+    'category': 'toDo'
 
 },{
 
     'id': 1,
     'title': 'Putzen',
-    'category': 'open'
+    'category': 'toDo'
 
 },{
 
     'id': 2,
     'title': 'Einkaufen',
-    'category': 'open'
+    'category': 'toDo'
 
 }];
 
-let currentDraggedElement;
-
 function updateHTML(){
 
-    let open = toDos.filter(t => t['category'] == 'open');
+    let toDo = toDos.filter(t => t['category'] == 'toDo');
 
-    document.getElementById('open').innerHTML = '';
+    document.getElementById('toDo').innerHTML = '';
 
-    for (let i = 0; i < open.length; i++) {
-    const element = open[i];
-    document.getElementById('open').innerHTML += generateToDoHTML(element);
+    for (let i = 0; i < toDo.length; i++) {
+    const element = toDo[i];
+    document.getElementById('toDo').innerHTML += generateToDoHTML(element);
         
     }
 
@@ -103,6 +103,17 @@ function moveTo(category){
 
 }
 
+function highlight(id){
+
+    document.getElementById(id).classList.add('grey-box-highlight');
+
+}
+
+function removehighlight(id){
+
+    document.getElementById(id).classList.remove('grey-box-highlight');
+
+}
 function openContainer(){
 
     document.getElementById('openContainer').classList.remove('d-none');
