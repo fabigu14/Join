@@ -83,8 +83,9 @@ input:focus{
     height: 167px;
 }
 
-#assigned_imgs{
+#assigned_users{
     display: flex;
+    
     margin-bottom: 15px;
     align-items: center;
 }
@@ -117,6 +118,34 @@ input:focus{
     border-radius: 100%;
     margin-left: 10px;
     background-color: #80808040;
+    position: relative;
+}
+
+.assign-user{
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    left: -259px;
+    box-shadow: 0px 0px 6px 1px #8080805e;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 257px;
+    z-index: 2;
+    max-height: 180;
+    overflow: auto;
+}
+
+.assign-user:hover{
+    cursor: default;
+}
+
+.assign-user img{
+    margin: 5px 5px 0 5px;
+}
+
+.assign-user img:hover{
+    cursor: pointer;
 }
 
 .crs-pointer:hover{
@@ -127,6 +156,7 @@ input:focus{
     display: flex;
     justify-content: flex-end;
 }
+
 #create_btn{
     color: white;
     background-color: #1f1fa0;
