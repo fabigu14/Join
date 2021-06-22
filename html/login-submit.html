@@ -27,27 +27,27 @@
                 <form onsubmit="login()" id="loginContainer" class="loginSubmitBox">
                     <h2 class="loginHeader">Anmelden</h2>
 
-                    <input id="username" class="loginSubmit" placeholder="Username" required type="text">
+                    <input id="username" class="loginSubmit" placeholder="Username" required type="text" autocomplete="username">
 
-                    <input id="password" class="loginSubmit" placeholder="Passwort" required type="password">
+                    <input id="password" class="loginSubmit" placeholder="Passwort" required type="password" autocomplete="current-password">
 
                     <button class="btn loginBtn">Anmelden</button>
 
-                    <span>Noch kein Nutzerkonte</span>
-                    <a class="toggleLoginSubmit loginLink" onclick="goToSubmit()">Jetzt registrieren</a>
+                    <span>Noch kein Nutzerkonto</span>
+                    <span class="toggleLoginSubmit loginLink" onclick="goToSubmit()">Jetzt registrieren</span>
                 </form>
    
 
                 <form onsubmit="addUser()" id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
                     <h2>Registrieren</h2>
 
-                    <input id="nameInput" class="loginSubmit" placeholder="Name" required type="text">
+                    <input id="nameInput" class="loginSubmit" placeholder="Name" required type="text" autocomplete="name">
 
-                    <input id="usernameInput" class="loginSubmit" placeholder="Username" required type="text">
+                    <input id="usernameInput" class="loginSubmit" placeholder="Username" required type="text" autocomplete="username">
 
-                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail" required type="email">
+                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail" required type="email" autocomplete="email">
 
-                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort" required type="password">
+                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort" required type="password" autocomplete="current-password">
 
                     <button class="btn">Registrieren</button>
 
