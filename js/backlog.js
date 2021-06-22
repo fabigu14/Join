@@ -94,8 +94,8 @@ function renderBacklogRows(task, i) {
                             <a id="blUserEmail_${i}" href="#">${task['email']}</a>
                         </div>
                     </div>
-                        <div id="blCategory_${i}" class="blCategories">${task['category_value']}</div>
-                        <div id="blDetail_${i}" class="blDetails">${task['description']}</div>
+                        <div id="blCategory_${i}" class="blCategories"><span class="hiddenText">Category:</span><span>${task['category_value']}</span></div>
+                        <div id="blDetail_${i}" class="blDetails"><span class="hiddenText">Description:</span><span>${task['description']}</span></div>
                 </div>`;
 }
 

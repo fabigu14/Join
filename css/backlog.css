@@ -141,3 +141,46 @@ body {
     left: 0;
     border-radius: 20px 0 0 20px;
 }
+
+.hiddenText {
+    margin-right: 10px;
+    display: none;
+}
+
+@media (max-width: 930px) {
+    .container {
+        display: unset;
+    }
+    #nav_placeholder {
+        position: unset;
+    }
+    .backlogContainer {
+        margin: 0;
+        padding: 8px;
+        width: inherit;
+    }
+    .headlineContainer {
+        text-align: center;
+        padding-top: 0;
+    }
+    .headlineContainer > p {
+        margin-bottom: 16px;
+    }
+    .blHeader {
+        display: none;
+    }
+    .backlogRows {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .blCategories {
+        margin-left: 60px;
+        justify-content: flex-start;
+    }
+    .blDetails {
+        margin-left: 60px;
+    }
+    .hiddenText {
+        display: unset;
+    }
+}

@@ -1,6 +1,6 @@
 let inputIds = ['nameInput', 'usernameInput', 'emailInput', 'passwordInput'];
 let requestedFields = ['name', 'username', 'email', 'password'];
-let user = {}
+let user = {};
 
 function goToSubmit() {
     let login = document.getElementById('loginContainer');

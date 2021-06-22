@@ -43,3 +43,40 @@
     height: 75px;
     border-radius: 100%;
 }
+
+@media (max-width: 930px) {
+    #navbar {
+        flex-direction: row;
+        width: inherit;
+        height: 20px;
+    }
+    .navRow {
+        display: flex;
+        align-items: center;
+        width: 90%;
+    }
+    .logo {
+        align-items: center;
+        margin: 0;
+        margin-left: 8px;
+    }
+    .logo img {
+        width: 40px;
+        height: 50px;
+    }
+    .links {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .links a {
+        margin: 0;
+    }
+    .profile-img {
+        width: 10%;
+        margin-right: 8px;
+    }
+    .profile-img img {
+        height: 45px;
+    }
+}
