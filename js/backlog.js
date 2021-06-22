@@ -1,8 +1,79 @@
+let taskss = [{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Development',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Management',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Design',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Testing',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Development',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Development',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Development',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Development',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Development',
+    'description': 'Lorem Ipsum Dolor.'
+},
+{
+    'name': 'Mustafa',
+    'email': 'mustafaguer@yahoo.de',
+    'img': '../img/taxi.jpg',
+    'category_value': 'Development',
+    'description': 'Lorem Ipsum Dolor.'
+}];
+
 function updateBacklog() {
     clearBacklog();
 
-    for (let i = 0; i < tasks.length; i++) {
-        const task = tasks[i];
+    for (let i = 0; i < taskss.length; i++) {
+        const task = taskss[i];
         backlogContent.innerHTML += renderBacklogRows(task, i);
 
         checkCategory(i);
@@ -23,13 +94,13 @@ function renderBacklogRows(task, i) {
                             <a id="blUserEmail_${i}" href="#">${task['email']}</a>
                         </div>
                     </div>
-                        <div id="blCategory_${i}" class="blCategories">${task['category']}</div>
+                        <div id="blCategory_${i}" class="blCategories">${task['category_value']}</div>
                         <div id="blDetail_${i}" class="blDetails">${task['description']}</div>
                 </div>`;
 }
 
 function checkCategory(i) {
-    let blCategory = tasks[i]['category'];
+    let blCategory = taskss[i]['category_value'];
 
     switch (blCategory) {
         case 'Development':

@@ -23,36 +23,38 @@
 
         <div class="loginSubmitContainer">
             <div class="slideBox">
-                <div id="loginContainer" class="loginSubmitBox">
+               
+                <form onsubmit="login()" id="loginContainer" class="loginSubmitBox">
                     <h2 class="loginHeader">Anmelden</h2>
 
-                    <input id="username" class="loginSubmit" placeholder="Username" required>
+                    <input id="username" class="loginSubmit" placeholder="Username" required type="text">
 
-                    <input id="password" class="loginSubmit" placeholder="Passwort" required>
+                    <input id="password" class="loginSubmit" placeholder="Passwort" required type="password">
 
-                    <button class="btn loginBtn" onclick="login()">Anmelden</button>
+                    <button class="btn loginBtn">Anmelden</button>
 
                     <span>Noch kein Nutzerkonte</span>
                     <a class="toggleLoginSubmit loginLink" onclick="goToSubmit()">Jetzt registrieren</a>
-                </div>
+                </form>
+   
 
-                <div id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
+                <form onsubmit="addUser()" id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
                     <h2>Registrieren</h2>
 
-                    <input id="nameInput" class="loginSubmit" placeholder="Name" required>
+                    <input id="nameInput" class="loginSubmit" placeholder="Name" required type="text">
 
-                    <input id="usernameInput" class="loginSubmit" placeholder="Username" required>
+                    <input id="usernameInput" class="loginSubmit" placeholder="Username" required type="text">
 
-                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail" type="email" required>
+                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail" required type="email">
 
-                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort" type="password" required>
+                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort" required type="password">
 
-                    <button class="btn" onclick="addUser()">Registrieren</button>
+                    <button class="btn">Registrieren</button>
 
                     <span>Du hast schon ein Konto?</span>
                     <span class="toggleLoginSubmit" onclick="goToLogin()">Anmelden</span>
 
-                </div>
+                </form>
                 
             </div>
         </div>

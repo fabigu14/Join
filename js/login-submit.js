@@ -1,10 +1,3 @@
-// function toggleLoginSubmit() {
-//     let login = document.getElementById('loginContainer');
-//     let submit = document.getElementById('submitContainer');
-
-//     login.classList.toggle('d-none');
-//     submit.classList.toggle('d-none');
-// }
 let inputIds = ['nameInput', 'usernameInput', 'emailInput', 'passwordInput'];
 let requestedFields = ['name', 'username', 'email', 'password'];
 let user = {}
