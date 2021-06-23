@@ -33,17 +33,18 @@ function updateHTML(){
 
 }
 
-function update(toDo){
+function update(containerID, array){
 
-    document.getElementById('toDo').innerHTML = '';
+    document.getElementById(containerID).innerHTML = '';
 
-    for (let i = 0; i < toDo.length; i++) {
-    const element = toDo[i];
-    document.getElementById('toDo').innerHTML += generateToDoHTML(element);
+    for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    document.getElementById(containerID).innerHTML += generateToDoHTML(element);
         
     }
 
 }
+
 
 function generateToDoHTML(element){
 
