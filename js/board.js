@@ -23,43 +23,23 @@ let toDos = [{
 function updateHTML(){
 
     let toDo = toDos.filter(t => t['category'] == 'toDo');
+    update('toDo', toDo);
+    let inProgress = toDos.filter(t => t['category'] == 'inProgress');
+    update('inProgress', inProgress);
+    let testing = toDos.filter(t => t['category'] == 'testing');
+    update('testing', testing);
+    let done = toDos.filter(t => t['category'] == 'done');
+    update('done', done);
+
+}
+
+function update(toDo){
 
     document.getElementById('toDo').innerHTML = '';
 
     for (let i = 0; i < toDo.length; i++) {
     const element = toDo[i];
     document.getElementById('toDo').innerHTML += generateToDoHTML(element);
-        
-    }
-
-    let inProgress = toDos.filter(t => t['category'] == 'inProgress');
-
-    document.getElementById('inProgress').innerHTML = '';
-
-    for (let i = 0; i < inProgress.length; i++) {
-    const element = inProgress[i];
-    document.getElementById('inProgress').innerHTML += generateToDoHTML(element);
-        
-    }
-
-    let testing = toDos.filter(t => t['category'] == 'testing');
-
-    document.getElementById('testing').innerHTML = '';
-
-    for (let i = 0; i < testing.length; i++) {
-    const element = testing[i];
-    document.getElementById('testing').innerHTML += generateToDoHTML(element);
-        
-    }
-
-
-    let done = toDos.filter(t => t['category'] == 'done');
-
-    document.getElementById('done').innerHTML = '';
-
-    for (let i = 0; i < done.length; i++) {
-    const element = done[i];
-    document.getElementById('done').innerHTML += generateToDoHTML(element);
         
     }
 
