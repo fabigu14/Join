@@ -17,13 +17,13 @@
 </head>
 <body>
     
-    <body onload="init(), updateHTML()">
+    <body onload="initboard()">
         <div id="nav_placeholder"></div>
 
         <div class="custom-container">
             <div class="box">
                 <h3>TO DO</h3>
-                <div id="toDo" class="grey-box" ondrop="moveTo('toDo')" ondragleave="removehighlight('toDo')" ondragover="allowDrop(event); highlight('open')">
+                <div id="toDo" class="grey-box" ondrop="moveTo('toDo')" ondragleave="removehighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')">
                 </div>
             </div>
             <div class="box">

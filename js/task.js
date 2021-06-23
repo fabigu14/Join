@@ -10,6 +10,7 @@ function createTask() {
         let currentField = document.getElementById(inputField);
         let inputValue = currentField.value;
         task[inputField] = inputValue;
+        task['state'] = 'toDo';
     });
 
     addToTasks();

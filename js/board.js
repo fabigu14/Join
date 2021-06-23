@@ -1,54 +1,43 @@
 let currentDraggedElement;
 
-let toDos = [{
+async function initboard(){
+    
+    await init();
+    updateHTML();
 
-    'id': 0,
-    'title': 'Kochen',
-    'category': 'toDo'
-
-},{
-
-    'id': 1,
-    'title': 'Putzen',
-    'category': 'toDo'
-
-},{
-
-    'id': 2,
-    'title': 'Einkaufen',
-    'category': 'toDo'
-
-}];
+}
 
 function updateHTML(){
-
-    let toDo = toDos.filter(t => t['category'] == 'toDo');
+    
+    console.log(tasks);
+    let toDo = tasks.filter(t => t['state'] == 'toDo');
+     
+    console.log(toDo)
     update('toDo', toDo);
-    let inProgress = toDos.filter(t => t['category'] == 'inProgress');
+    let inProgress = tasks.filter(t => t['state'] == 'inProgress');
     update('inProgress', inProgress);
-    let testing = toDos.filter(t => t['category'] == 'testing');
+    let testing = tasks.filter(t => t['state'] == 'testing');
     update('testing', testing);
-    let done = toDos.filter(t => t['category'] == 'done');
+    let done = tasks.filter(t => t['state'] == 'done');
     update('done', done);
-
+    
 }
 
 function update(containerID, array){
 
     document.getElementById(containerID).innerHTML = '';
-
     for (let i = 0; i < array.length; i++) {
     const element = array[i];
-    document.getElementById(containerID).innerHTML += generateToDoHTML(element);
+    console.log(element);
+    document.getElementById(containerID).innerHTML += generateToDoHTML(element,i);
         
     }
 
 }
 
+function generateToDoHTML(element, i){
 
-function generateToDoHTML(element){
-
-    return `<div draggable="true" onclick="openContainer(${element['id']})" ondragstart="startdragging(${element['id']})" class="taskContainer">${element['title']}</div>
+    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i})" class="taskContainer">${element['title']}</div>
             <div id="openContainer" class="openContainer d-none">
             <div class="infoBox">
             <div class="headlinebox">
@@ -66,7 +55,7 @@ function generateToDoHTML(element){
 }
 
 function startdragging(id){
-
+console.log(id);
     currentDraggedElement = id;
 
 }
@@ -79,7 +68,7 @@ function allowDrop(ev) {
 
 function moveTo(category){
 
-    toDos[currentDraggedElement]['category'] = category;
+    tasks[currentDraggedElement]['state'] = category;
     updateHTML();
 
 }
@@ -109,7 +98,7 @@ function closeContainer(){
 
 function deletetasks(id){
 
-    toDos.splice(id, 1);
+    tasks.splice(id, 1);
     updateHTML();
 
 }
