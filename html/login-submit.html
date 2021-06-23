@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <script src="../js/index.js"></script>
     <script src="../js/login-submit.js"></script>
+    <script src="../js/task.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/mini_backend.js"></script>
 </head>
@@ -38,7 +39,7 @@
                 </form>
    
 
-                <form onsubmit="addUser()" id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
+                <form  id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
                     <h2>Registrieren</h2>
 
                     <input id="nameInput" class="loginSubmit" placeholder="Name" required type="text" autocomplete="name">
@@ -49,7 +50,7 @@
 
                     <input id="passwordInput" class="loginSubmit" placeholder="Passwort" required type="password" autocomplete="current-password">
 
-                    <button class="btn">Registrieren</button>
+                    <button onclick="addUser()" class="btn">Registrieren</button>
 
                     <span>Du hast schon ein Konto?</span>
                     <span class="toggleLoginSubmit" onclick="goToLogin()">Anmelden</span>

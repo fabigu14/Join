@@ -32,7 +32,7 @@ function addDefaultImg(){
     user['img'] = 'img/defaultUser.png';
 }
 
-function clearInput(){
+function clearInput(){           
     inputIds.forEach(id => {
        let currentField =  document.getElementById(id);
        currentField.value = '';
