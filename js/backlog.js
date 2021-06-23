@@ -89,6 +89,11 @@ let taskss = [{
     }
 }];
 
+async function initBacklog() {
+    await init();
+    updateBacklog();
+}
+
 function updateBacklog() {
     clearBacklog();
 
