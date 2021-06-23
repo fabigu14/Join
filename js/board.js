@@ -109,7 +109,7 @@ function closeContainer(){
 
 function deletetasks(id){
 
-    toDos.splice(id);
+    toDos.splice(id, 1);
     updateHTML();
 
 }
