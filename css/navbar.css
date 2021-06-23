@@ -44,7 +44,7 @@
     border-radius: 100%;
 }
 
-@media (max-width: 930px) {
+@media (max-width: 1100px) {
     #navbar {
         flex-direction: row;
         width: inherit;

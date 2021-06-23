@@ -1,72 +1,92 @@
 let taskss = [{
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Development',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Management',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Design',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Testing',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Development',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Development',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Development',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Development',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Development',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 },
 {
-    'name': 'Mustafa',
-    'email': 'mustafaguer@yahoo.de',
-    'img': '../img/taxi.jpg',
     'category_value': 'Development',
-    'description': 'Lorem Ipsum Dolor.'
+    'description': 'Lorem Ipsum Dolor.',
+    'user': {
+        'name': 'Mustafa',
+        'email': 'mustafaguer@yahoo.de',
+        'img': '../img/taxi.jpg'
+    }
 }];
 
 function updateBacklog() {
@@ -74,7 +94,8 @@ function updateBacklog() {
 
     for (let i = 0; i < taskss.length; i++) {
         const task = taskss[i];
-        backlogContent.innerHTML += renderBacklogRows(task, i);
+        let user = task['user'];
+        backlogContent.innerHTML += renderBacklogRows(task, user, i);
 
         checkCategory(i);
     }
@@ -85,13 +106,13 @@ function clearBacklog() {
     backlogContent.innerHTML = '';
 }
 
-function renderBacklogRows(task, i) {
+function renderBacklogRows(task, user, i) {
     return `<div id="backlogRows_${i}" class="backlogRows">
                     <div class="backlogUser">
-                        <img id="blUserImg_${i}" class="blUserImg" src="${task['img']}">
+                        <img id="blUserImg_${i}" class="blUserImg" src="${user['img']}">
                         <div class="blUserData">
-                            <span id="blUserName${i}">${task['name']}</span>
-                            <a id="blUserEmail_${i}" href="#">${task['email']}</a>
+                            <span id="blUserName${i}">${user['name']}</span>
+                            <a id="blUserEmail_${i}" href="#">${user['email']}</a>
                         </div>
                     </div>
                         <div id="blCategory_${i}" class="blCategories"><span class="hiddenText">Category:</span><span>${task['category_value']}</span></div>
