@@ -1,17 +1,29 @@
 let inputFields = ['title', 'due_date', 'category_value', 'urgency_value', 'description'];
 let task = {};
 let usersAssigned = [];
-let usersToAssign;
+let usersToAssign = [];
 let dropdownIsShowing = false;
 
+async function initTask() {
+    await init();
+    initUsersToAssign();
+}
+
+function initUsersToAssign() {
+    for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        usersToAssign[i] = user;
+    }
+}
 
 function createTask() {
     inputFields.forEach(inputField => {
         let currentField = document.getElementById(inputField);
         let inputValue = currentField.value;
         task[inputField] = inputValue;
-        task['state'] = 'toDo';
     });
+    task['state'] = 'toDo';
+    task['assigned_users'] = usersAssigned;
 
     addToTasks();
     clearInput();
@@ -28,6 +40,9 @@ function clearInput() {
         currentField.value = '';
     });
     task = {};
+    usersAssigned = [];
+    showUsersAssigned();
+    initUsersToAssign();
 }
 
 function showDropdown(id) {
@@ -55,6 +70,7 @@ function hideDropdown() {
         document.getElementById('category_dropdown').classList.add('d-none');
         document.getElementById('urgency_dropdown').classList.add('d-none');
         document.getElementById('users_to_assign').classList.add('d-none');
+        document.getElementById('users_to_assign').classList.add('d-none');
         hideOverlay();
         dropdownIsShowing = false;
     }
@@ -67,22 +83,46 @@ function showUsersToAssign() {
     showOverlay();
 }
 
+function showUsersAssigned() {
+    loadUsersAssigned();
+}
+
 function loadUsersToAssign() {
-    usersToAssign = users;
+
     document.getElementById('users_to_assign').innerHTML = '';
     for (let i = 0; i < usersToAssign.length; i++) {
         const user = usersToAssign[i];
-        document.getElementById('users_to_assign').innerHTML += generateHTML(user);
+        document.getElementById('users_to_assign').innerHTML += generateHTML(user, i);
     }
 }
 
-function generateHTML(user) {
-    let html = 
-    `<img onclick="addToAssigned(${user})" class="person-assigned" src="../` + user['img'] + `" alt="profile-img">`;
+function loadUsersAssigned() {
+    document.getElementById('assigned_users').innerHTML = '';
+    for (let i = 0; i < usersAssigned.length; i++) {
+        const user = usersAssigned[i];
+        document.getElementById('assigned_users').innerHTML += generateAssignedHTML(user);
+    }
+}
+
+function generateAssignedHTML(user) {
+    let html =
+        `<img class="person-assigned" src="../` + user['img'] + `" alt="profile-img">`;
     return html;
 }
 
-function addToAssigned(user) {
-    
+function generateHTML(user, index) {
+    let html =
+        `<img onclick="addToAssigned(${index})" class="person-assigned" src="../` + user['img'] + `" alt="profile-img">`;
+    return html;
 }
 
+function addToAssigned(userIndex) {
+    usersAssigned.push(usersToAssign[userIndex]);
+    removeFromToAssign(userIndex);
+    showUsersAssigned();
+    hideDropdown();
+}
+
+function removeFromToAssign(userIndex) {
+    usersToAssign.splice(userIndex, 1);
+}

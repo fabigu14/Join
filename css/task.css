@@ -83,11 +83,15 @@ input:focus{
     height: 167px;
 }
 
-#assigned_users{
+.add-user{
     display: flex;
-    
+    position: relative;
     margin-bottom: 15px;
     align-items: center;
+}
+
+#assigned_users img{
+    margin-right: 10px;
 }
 
 .img-div{
@@ -116,17 +120,16 @@ input:focus{
 .add-person{
     padding: 7px;
     border-radius: 100%;
-    margin-left: 10px;
     background-color: #80808040;
-    position: relative;
+    
 }
 
 .assign-user{
     background-color: white;
     padding: 10px;
     position: absolute;
-    top: 20px;
-    left: -259px;
+    top: 33px;
+    left: -182px;
     box-shadow: 0px 0px 6px 1px #8080805e;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

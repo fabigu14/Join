@@ -12,7 +12,7 @@
 <title>Add task</title>
 </head>
 
-<body onload="init()">
+<body onload="initTask()">
 
 <div id="overlay" class="d-none" onclick="hideDropdown()">
 
@@ -111,15 +111,18 @@
                 <div>
                     <label for="assigned">ASSIGNED TO</label>
                     <div class="finalize-task">
-                        <div id="assigned_users">
-                            <img class="person-assigned" src="../img/fabi.jpg" alt="profile-img">
-                            <div onclick="showUsersToAssign()" class="add-person crs-pointer">
-                                <div id="users_to_assign" class="assign-user d-none">
-                                    
-                                </div>
-                                <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
+                        <div class="add-user">
+                            <div id="assigned_users">
+
                             </div>
                             
+                            <div onclick="showUsersToAssign()" class="add-person crs-pointer">
+                                
+                                <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
+                            </div>
+                            <div id="users_to_assign" class="assign-user d-none">
+                                    
+                            </div>
                         </div>
                         <div class="btns">
                             <button class="crs-pointer" id="cancel_btn" onclick="clearInput()">CANCEL</button>
