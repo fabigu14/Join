@@ -9,15 +9,16 @@ async function initboard(){
 
 function updateHTML(){
     
-    console.log(tasks);
+
     let toDo = tasks.filter(t => t['state'] == 'toDo');
-     
-    console.log(toDo)
     update('toDo', toDo);
+
     let inProgress = tasks.filter(t => t['state'] == 'inProgress');
     update('inProgress', inProgress);
+    
     let testing = tasks.filter(t => t['state'] == 'testing');
     update('testing', testing);
+    
     let done = tasks.filter(t => t['state'] == 'done');
     update('done', done);
     
@@ -44,7 +45,8 @@ function generateToDoHTML(element, i){
             <div class="headline"><h2>${element['title']}</h2></div>
             <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
             </div>
-            <div class="descriptionContainer">${element['title']}</div>
+            <div class="descriptionContainer">${element['description']}</div>
+            <div class="date-section"><p>${element['due_date']}</p></div>
             <div onclick="deletetasks()" class="deleteButton">
             <button>Delete</button>
             </div>
@@ -55,7 +57,7 @@ function generateToDoHTML(element, i){
 }
 
 function startdragging(id){
-console.log(id);
+
     currentDraggedElement = id;
 
 }

@@ -86,7 +86,7 @@ h3 {
 
 .infoBox h2 {
     margin-top: 10px;
-    padding-left: 30px;
+    padding-left: 18px;
     font-size: 1.5em;
     max-width: 350px;
     color: #5a5b5d;
@@ -107,13 +107,18 @@ h3 {
 
 }
 
+.date-section p{
+
+    padding-left: 15px;
+}
+
 .deleteButton{
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-top: 30px;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid white;
 
 }
