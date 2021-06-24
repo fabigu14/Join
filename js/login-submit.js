@@ -23,13 +23,13 @@ function addUser() {
         user[requestedFields[i]] = input.value;
     }
     addDefaultImg();
-    clearInput();
+    // clearInput();
     users.push(user);
     saveUsersToServer();
 }
 
 function addDefaultImg(){
-    user['img'] = 'img/defaultUser.png';
+    user['img'] = '../img/defaultUser.png';
 }
 
 function clearInput(){           
