@@ -71,7 +71,7 @@ function checkCategory(i) {
             result = 'management-bl';
             break;
         default:
-            result = 'default-bl';
+            result = 'default-bl'; 
     }
 
     drawBorder(result, i);
