@@ -4,11 +4,6 @@ async function initBacklog() {
     updateBacklog();
 }
 
-function clearBacklog() {
-    let backlogContent = document.getElementById('backlogContent');
-    backlogContent.innerHTML = '';
-}
-
 function updateBacklog() {
     clearBacklog();
 
@@ -16,28 +11,51 @@ function updateBacklog() {
         const task = tasks[i];
         for (let j = 0; j < task['assigned_users'].length; j++) {
             const user = task['assigned_users'][j];
-            backlogContent.innerHTML += renderBacklogRows(task, user, i);
-            checkCategory(i);
+            backlogContent.innerHTML += renderBacklogRows(task, user);
+            setIdToRows();
+            setIdToCategory();
         }
     }
 }
 
-function renderBacklogRows(task, user, i) {
-    return `<div id="backlogRows_${i}" class="backlogRows">
+function clearBacklog() {
+    let backlogContent = document.getElementById('backlogContent');
+    backlogContent.innerHTML = '';
+}
+
+function renderBacklogRows(task, user) {
+    return `<div class="backlogRows">
                     <div class="backlogUser">
-                        <img id="blUserImg_${i}" class="blUserImg" src="../${user['img']}">
+                        <img class="blUserImg" src="../${user['img']}">
                         <div class="blUserData">
-                            <span id="blUserName${i}">${user['name']}</span>
-                            <a id="blUserEmail_${i}" href="#">${user['email']}</a>
+                            <span>${user['name']}</span>
+                            <a href="#">${user['email']}</a>
                         </div>
                     </div>
-                        <div id="blCategory_${i}" class="blCategories"><span class="hiddenText">Category:</span><span>${task['category_value']}</span></div>
-                        <div id="blDetail_${i}" class="blDetails"><span class="hiddenText">Description:</span><span>${task['description']}</span></div>
+                        <div class="blCategories"><span class="hiddenText">Category:</span><span class="blCategory">${task['category_value']}</span></div>
+                        <div class="blDetails"><span class="hiddenText">Description:</span><span>${task['description']}</span></div>
                 </div>`;
 }
 
+function setIdToRows() {
+    let rows = document.getElementsByClassName('backlogRows');
+    for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        row.setAttribute('id', 'backlogRow_'+ i);
+    }
+}
+
+function setIdToCategory() {
+    let blCategories = document.getElementsByClassName('blCategory');
+    for (let i = 0; i < blCategories.length; i++) {
+        const blCategory = blCategories[i];
+        blCategory.setAttribute('id', 'backlogCategory_' + i);
+        checkCategory(i);
+    }
+}
+
 function checkCategory(i) {
-    let blCategory = tasks[i]['category_value'];
+    let blCategory = document.getElementById('backlogCategory_' + i).textContent;
 
     switch (blCategory) {
         case 'Development':
@@ -55,11 +73,11 @@ function checkCategory(i) {
         default:
             result = 'default-bl';
     }
-    
+
     drawBorder(result, i);
 }
 
 function drawBorder(result, i) {
-    let backlogRows = document.getElementById('backlogRows_' + i);
+    let backlogRows = document.getElementById('backlogRow_' + i);
     backlogRows.classList.add(result);
 }
