@@ -106,13 +106,23 @@ function loadUsersAssigned() {
 
 function generateAssignedHTML(user) {
     let html =
-        `<img class="person-assigned" src="../` + user['img'] + `" alt="profile-img">`;
+        `
+        <div class="tooltip">
+            <img class="person-assigned" src="../` + user['img'] + `" alt="profile-img">
+            <span class="tooltip-text">${user['email']}</span>
+        </div>
+        `;
     return html;
 }
 
 function generateHTML(user, index) {
     let html =
-        `<img onclick="addToAssigned(${index})" class="person-assigned" src="../` + user['img'] + `" alt="profile-img">`;
+        `
+        <div class="tooltip">
+        <img onclick="addToAssigned(${index})" class="person-assigned" src="../` + user['img'] + `" alt="profile-img">
+            <span class="tooltip-text">${user['email']}</span>
+        </div>
+        `;
     return html;
 }
 
