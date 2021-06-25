@@ -6,10 +6,13 @@ async function initboard(){
     updateHTML();
 
 }
+/**
+ * 
+ * @param {}
+ */
 
 function updateHTML(){
     
-
     let toDo = tasks.filter(t => t['state'] == 'toDo');
     update('toDo', toDo);
 
@@ -38,15 +41,22 @@ function update(containerID, array){
 
 function generateToDoHTML(element, i){
 
-    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i})" class="taskContainer">${element['title']}</div>
-            <div id="openContainer" class="openContainer d-none">
+    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i})" style="border-left-color:${element['color']}" class="taskContainer">${element['title']}</div>
+            <div id="openContainer" class="openContainer d-none" style="border-left-color:${element['color']}">
             <div class="infoBox">
             <div class="headlinebox">
             <div class="headline"><h2>${element['title']}</h2></div>
             <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
             </div>
             <div class="descriptionContainer">${element['description']}</div>
-            <div class="date-section"><p>${element['due_date']}</p></div>
+            <div class="date-section"><p>Deadline: ${element['due_date']}</p></div>
+            
+            <div class="assigned-container">
+            <div class="assignedUser"><p>Assigned To:</p></div>
+            <div class="profileImage">
+            <img src="../img/fabi.jpg" alt="profile-img">
+            </div>
+            
             <div onclick="deletetasks()" class="deleteButton">
             <button>Delete</button>
             </div>
@@ -65,7 +75,6 @@ function startdragging(id){
 function allowDrop(ev) {
     ev.preventDefault();
   
-
 }
 
 function moveTo(category){
@@ -90,8 +99,7 @@ function openContainer(){
 
     document.getElementById('openContainer').classList.remove('d-none');
         
-    
-    }
+}
 
 function closeContainer(){
 
