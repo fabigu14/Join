@@ -17,12 +17,19 @@ function updateBacklog() {
         }
     }
 }
-
+/**
+ * that clears the hole page
+ */
 function clearBacklog() {
     let backlogContent = document.getElementById('backlogContent');
     backlogContent.innerHTML = '';
 }
-
+/**
+ * 
+ * @param {json} task - every separate task json of the tasks array
+ * @param {json} user - users who were assigned to the task
+ * @returns 
+ */
 function renderBacklogRows(task, user) {
     return `<div class="backlogRows">
                     <div class="backlogUser">
@@ -36,7 +43,10 @@ function renderBacklogRows(task, user) {
                         <div class="blDetails"><span class="hiddenText">Description:</span><span>${task['description']}</span></div>
                 </div>`;
 }
-
+/**
+ * 
+ * assing an id to the every separate task-row 
+ */
 function setIdToRows() {
     let rows = document.getElementsByClassName('backlogRows');
     for (let i = 0; i < rows.length; i++) {
@@ -44,7 +54,10 @@ function setIdToRows() {
         row.setAttribute('id', 'backlogRow_'+ i);
     }
 }
-
+/**
+ * 
+ * assign an id Attribute to the spans with the Category of the Tasks
+ */
 function setIdToCategory() {
     let blCategories = document.getElementsByClassName('blCategory');
     for (let i = 0; i < blCategories.length; i++) {
@@ -53,7 +66,11 @@ function setIdToCategory() {
         checkCategory(i);
     }
 }
-
+/**
+ * 
+ * 
+ * @param {int} i - id of the spans with the Category Name
+ */
 function checkCategory(i) {
     let blCategory = document.getElementById('backlogCategory_' + i).textContent;
 
@@ -76,7 +93,11 @@ function checkCategory(i) {
 
     drawBorder(result, i);
 }
-
+/**
+ * 
+ * @param {string} result - the content of the category element
+ * @param {int} i - the number of the id from the rows
+ */
 function drawBorder(result, i) {
     let backlogRows = document.getElementById('backlogRow_' + i);
     backlogRows.classList.add(result);
