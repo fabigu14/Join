@@ -41,8 +41,8 @@ function update(containerID, array){
 
 function generateToDoHTML(element, i){
 
-    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i})" style="border-left-color:${element['color']}" class="taskContainer">${element['title']}</div>
-            <div id="openContainer" class="openContainer d-none" style="border-left-color:${element['color']}">
+    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i})" class="taskContainer">${element['title']}</div>
+            <div id="openContainer" class="openContainer d-none">
             <div class="infoBox">
             <div class="headlinebox">
             <div class="headline"><h2>${element['title']}</h2></div>
@@ -65,6 +65,7 @@ function generateToDoHTML(element, i){
     `;
 
 }
+
 
 function startdragging(id){
 
