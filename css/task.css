@@ -1,46 +1,47 @@
-body{
+body {
     margin: 0;
     font-family: 'PT Sans', sans-serif;
     display: flex;
 }
-h1{
+
+h1 {
     font-size: 1.7em;
     margin-bottom: 0;
 }
 
-.main-div{
+.main-div {
     padding: 20px;
     width: 930px;
 }
 
-.subline{
+.subline {
     font-size: 0.8em;
     font-weight: bold;
     color: #1f1fa0;
 }
 
-.add-task{
+.add-task {
     padding: 30px;
     background-color: #3e5d940f;
     border-radius: 10px;
     margin-top: 30px;
 }
 
-.add-task label{
+.add-task label {
     font-weight: bold;
     color: #1f1fa0;
 }
 
-.input-row{
+.input-row {
     display: flex;
     justify-content: space-between;
 }
 
-.middle-row{
+.middle-row {
     margin: 25px 0;
 }
 
-input{
+input {
     border: none;
     height: 60px;
     width: 100%;
@@ -49,11 +50,11 @@ input{
     padding: 0 10px;
 }
 
-input:focus{
-    outline: none;   
+input:focus {
+    outline: none;
 }
 
-.input-field{
+.input-field {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,7 +65,7 @@ input:focus{
     width: 390px;
 }
 
-#description{
+#description {
     border: none;
     width: 100%;
     outline: none;
@@ -74,7 +75,7 @@ input:focus{
     border-radius: 5px;
 }
 
-.finalize-task{
+.finalize-task {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -83,18 +84,18 @@ input:focus{
     height: 167px;
 }
 
-.add-user{
+.add-user {
     display: flex;
     position: relative;
     margin-bottom: 15px;
     align-items: center;
 }
 
-#assigned_users img{
+#assigned_users img {
     margin-right: 10px;
 }
 
-.img-div{
+.img-div {
     width: 72px;
     height: 62px;
     display: flex;
@@ -103,28 +104,27 @@ input:focus{
     border-left: 1px solid #80808066;
 }
 
-.calender{
+.calender {
     width: 32px;
 }
 
-.arrow-down{
+.arrow-down {
     width: 25px;
     height: 15px;
 }
 
-.person-assigned{
+.person-assigned {
     height: 65px;
     border-radius: 100%;
 }
 
-.add-person{
+.add-person {
     padding: 7px;
     border-radius: 100%;
     background-color: #80808040;
-    
 }
 
-.assign-user{
+.assign-user {
     background-color: white;
     padding: 10px;
     position: absolute;
@@ -139,28 +139,28 @@ input:focus{
     overflow: auto;
 }
 
-.assign-user:hover{
+.assign-user:hover {
     cursor: default;
 }
 
-.assign-user img{
+.assign-user img {
     margin: 5px 5px 0 5px;
 }
 
-.assign-user img:hover{
+.assign-user img:hover {
     cursor: pointer;
 }
 
-.crs-pointer:hover{
+.crs-pointer:hover {
     cursor: pointer;
 }
 
-.btns{
+.btns {
     display: flex;
     justify-content: flex-end;
 }
 
-#create_btn{
+#create_btn {
     color: white;
     background-color: #1f1fa0;
     padding: 20px 20px;
@@ -170,7 +170,7 @@ input:focus{
     border-radius: 15px;
 }
 
-#cancel_btn{
+#cancel_btn {
     color: #1f1fa0;
     padding: 0 10px;
     margin-right: 45px;
@@ -180,7 +180,7 @@ input:focus{
     background-color: rgba(0, 0, 0, 0);
 }
 
-.dropdown{
+.dropdown {
     box-shadow: 0px 0px 6px 1px #8080805e;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -190,36 +190,59 @@ input:focus{
     z-index: 2;
 }
 
-.options{
+.options {
     background-color: white;
     padding: 10px 10px;
     font-size: 1.2em;
 }
 
-.options:hover{
+.options:hover {
     background-color: #1f1fa0;
     color: white;
     cursor: pointer;
 }
 
-.bottom-element{
+.bottom-element {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding-bottom: 10px;
 }
 
-.d-none{
+.d-none {
     display: none;
 }
 
-.input-radius{
+.input-radius {
     border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0; 
+    border-bottom-right-radius: 0;
 }
 
-#overlay{
+#overlay {
     position: absolute;
     height: 100vh;
     width: 100%;
     z-index: 1;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* If you want dots under the hoverable text */
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: fit-content;
+    background-color: #3e5d940f;
+    color: #00000091;
+    text-align: center;
+    padding: 5px 3px;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
 }
