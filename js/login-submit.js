@@ -23,7 +23,7 @@ function addUser() {
         user[requestedFields[i]] = input.value;
     }
     addDefaultImg();
-    // clearInput();
+    clearInput(inputIds);
     users.push(user);
     saveUsersToServer();
 }
@@ -32,12 +32,7 @@ function addDefaultImg(){
     user['img'] = '../img/defaultUser.png';
 }
 
-function clearInput(){           
-    inputIds.forEach(id => {
-       let currentField =  document.getElementById(id);
-       currentField.value = '';
-    });
-}
+
 // function deleteUser(name) {
 //     backend.deleteItem('users');
 //   }

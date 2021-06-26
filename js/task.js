@@ -26,7 +26,7 @@ function createTask() {
     task['assigned_users'] = usersAssigned;
 
     addToTasks();
-    clearInput();
+    resetInput();
 }
 
 function addToTasks() {
@@ -34,11 +34,8 @@ function addToTasks() {
     saveTasksToServer();
 }
 
-function clearInput() {
-    inputFields.forEach(inputField => {
-        let currentField = document.getElementById(inputField);
-        currentField.value = '';
-    });
+function resetInput() {
+    clearInput(inputFields);
     task = {};
     usersAssigned = [];
     showUsersAssigned();

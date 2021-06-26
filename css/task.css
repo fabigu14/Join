@@ -135,7 +135,7 @@ input:focus {
     border-bottom-right-radius: 5px;
     width: 257px;
     z-index: 2;
-    max-height: 180;
+    max-height: 145;
     overflow: auto;
 }
 

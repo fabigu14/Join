@@ -24,39 +24,47 @@
 
         <div class="loginSubmitContainer">
             <div class="slideBox">
-                
+
                 <form onsubmit="login()" id="loginContainer" class="loginSubmitBox">
                     <h2 class="loginHeader">Anmelden</h2>
 
-                    <input id="username" class="loginSubmit" placeholder="Username" required type="text" autocomplete="username">
+                    <input id="username" class="loginSubmit" placeholder="Username" required type="text"
+                        autocomplete="username">
 
-                    <input id="password" class="loginSubmit" placeholder="Passwort" required type="password" autocomplete="current-password">
+                    <input id="password" class="loginSubmit" placeholder="Passwort" required type="password"
+                        autocomplete="current-password">
 
                     <button class="btn loginBtn">Anmelden</button>
 
                     <span>Noch kein Nutzerkonto</span>
                     <span class="toggleLoginSubmit loginLink" onclick="goToSubmit()">Jetzt registrieren</span>
                 </form>
-   
 
-                <div  id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
+                <form onsubmit="return false" id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);">
+                    <!-- <div id="submitContainer" class="loginSubmitBox" style="transform: translateY(100%);"> -->
                     <h2>Registrieren</h2>
 
-                    <input id="nameInput" class="loginSubmit" placeholder="Name" required type="text" autocomplete="name">
+                    <input id="nameInput" class="loginSubmit" placeholder="Name" required type="text"
+                        autocomplete="name">
 
-                    <input id="usernameInput" class="loginSubmit" placeholder="Username" required type="text" autocomplete="username">
+                    <input id="usernameInput" class="loginSubmit" placeholder="Username" required type="text"
+                        autocomplete="username">
 
-                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail" required type="email" autocomplete="email">
+                    <input id="emailInput" class="loginSubmit" placeholder="E-Mail" required type="email"
+                        autocomplete="email">
 
-                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort" required type="password" autocomplete="current-password">
+                    <input id="passwordInput" class="loginSubmit" placeholder="Passwort" required type="password"
+                        autocomplete="current-password">
 
-                    <button onclick="addUser()" class="btn">Registrieren</button>
-
+                    <!-- <button onclick="addUser()" class="btn">Registrieren</button> -->
+                    <input type="submit" onclick="addUser()" class="btn" value="Registrieren">
                     <span>Du hast schon ein Konto?</span>
                     <span class="toggleLoginSubmit" onclick="goToLogin()">Anmelden</span>
 
-                </div>
-                
+                    <!-- </div> -->
+                </form>
+
+
             </div>
         </div>
     </div>

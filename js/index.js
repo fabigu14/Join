@@ -26,3 +26,10 @@ function saveTasksToServer() {
 function saveUsersToServer() {
     backend.setItem('users', JSON.stringify(users));
 }
+
+function clearInput(inputIds){           
+    inputIds.forEach(id => {
+       let currentField =  document.getElementById(id);
+       currentField.value = '';
+    });
+}
