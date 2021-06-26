@@ -27,19 +27,19 @@
             <h1>Add task</h1>
             <span class="subline">Learning Management System Project</span>
         </div>
-        <div class="add-task">
+        <form onsubmit="return false" class="add-task">
 
             <div class="input-row">
                 <div>
                     <label for="title">TITLE</label>
                     <div class="input-field">
-                        <input type="text" id="title" placeholder="Title">
+                        <input type="text" id="title" placeholder="Title" required>
                     </div>
                 </div>
                 <div>
                     <label for="due_date">DUE DATE</label>
                     <div class="input-field">
-                        <input type="date" id="due_date" placeholder="date">
+                        <input type="date" id="due_date" placeholder="date" required>
                         <!-- <div class="img-div crs-pointer">
                                 <img class="calender" src="../img/icons8-calendar-150.png" alt="calender">
                             </div> -->
@@ -52,7 +52,7 @@
                 <div>
                     <label for="category">CATEGORY</label>
                     <div id="category" class="input-field">
-                        <input type="text" id="category_value" placeholder="Category">
+                        <input type="text" id="category_value" placeholder="Category" required>
                         <div onclick="showDropdown('category')" class="img-div crs-pointer">
                             <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
@@ -78,7 +78,7 @@
 
                     <label for="urgency">URGENCY</label>
                     <div id="urgency" class="input-field">
-                        <input type="text" id="urgency_value" placeholder="Urgency">
+                        <input type="text" id="urgency_value" placeholder="Urgency" required>
                         <div onclick="showDropdown('urgency')" class="img-div crs-pointer">
                             <img  class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
@@ -105,7 +105,7 @@
                 <div>
                     <label for="category">DESCRIPTION</label>
                     <div class="input-field">
-                        <textarea name="description" id="description" cols="30" rows="8"></textarea>
+                        <textarea name="description" id="description" cols="30" rows="8" required></textarea>
                     </div>
                 </div>
                 <div>
@@ -132,7 +132,7 @@
                 </div>
             </div>
 
-        </div>
+        </form>
 
     </div>
 
