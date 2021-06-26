@@ -14,17 +14,22 @@ async function initboard(){
 function updateHTML(){
     
     let toDo = tasks.filter(t => t['state'] == 'toDo');
-    update('toDo', toDo);
 
     let inProgress = tasks.filter(t => t['state'] == 'inProgress');
-    update('inProgress', inProgress);
     
+    console.log(inProgress);
     let testing = tasks.filter(t => t['state'] == 'testing');
-    update('testing', testing);
     
+    console.log(testing);
     let done = tasks.filter(t => t['state'] == 'done');
-    update('done', done);
     
+    
+    update('toDo', toDo);
+    update('inProgress', inProgress);
+    update('testing', testing);
+    update('done', done);
+
+
 }
 
 function update(containerID, array){
@@ -32,7 +37,6 @@ function update(containerID, array){
     document.getElementById(containerID).innerHTML = '';
     for (let i = 0; i < array.length; i++) {
     const element = array[i];
-    console.log(element);
     document.getElementById(containerID).innerHTML += generateToDoHTML(element,i);
         
     }
@@ -42,6 +46,8 @@ function update(containerID, array){
 function generateToDoHTML(element, i){
 
     return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i})" class="taskContainer">${element['title']}</div>
+            
+
             <div id="openContainer" class="openContainer d-none">
             <div class="infoBox">
             <div class="headlinebox">
@@ -68,8 +74,9 @@ function generateToDoHTML(element, i){
 
 
 function startdragging(id){
-
+    console.log(id);
     currentDraggedElement = id;
+    
 
 }
 
