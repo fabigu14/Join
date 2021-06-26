@@ -112,6 +112,4 @@ function deletetasks(id){
     tasks.splice(id, 1);
     updateHTML();
     
-    
-
 }
