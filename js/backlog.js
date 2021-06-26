@@ -17,6 +17,7 @@ function updateBacklog() {
         }
     }
 }
+
 /**
  * that clears the hole page
  */
@@ -24,8 +25,8 @@ function clearBacklog() {
     let backlogContent = document.getElementById('backlogContent');
     backlogContent.innerHTML = '';
 }
+
 /**
- * 
  * @param {json} task - every separate task json of the tasks array
  * @param {json} user - users who were assigned to the task
  * @returns 
@@ -33,19 +34,25 @@ function clearBacklog() {
 function renderBacklogRows(task, user) {
     return `<div class="backlogRows">
                     <div class="backlogUser">
-                        <img class="blUserImg" src="../${user['img']}">
+                        <img class="blUserImg" src="${user['img']}">
                         <div class="blUserData">
-                            <span>${user['name']}</span>
-                            <a href="#">${user['email']}</a>
+                            <span class="wrap-W">${user['name']}</span>
+                            <a class="wrap-W" href="#">${user['email']}</a>
                         </div>
                     </div>
-                        <div class="blCategories"><span class="hiddenText">Category:</span><span class="blCategory">${task['category_value']}</span></div>
-                        <div class="blDetails"><span class="hiddenText">Description:</span><span>${task['description']}</span></div>
+                        <div class="blCategories">
+                            <span class="hiddenText">Category:</span>
+                            <span class="blCategory wrap-W">${task['category_value']}</span>
+                        </div>
+                        <div class="blDetails">
+                            <span class="hiddenText">Description:</span>
+                            <span class="wrap-W">${task['description']}</span>
+                        </div>
                 </div>`;
 }
+
 /**
- * 
- * assing an id to the every separate task-row 
+ * assign an id to the every separate task-row 
  */
 function setIdToRows() {
     let rows = document.getElementsByClassName('backlogRows');
@@ -54,8 +61,8 @@ function setIdToRows() {
         row.setAttribute('id', 'backlogRow_'+ i);
     }
 }
+
 /**
- * 
  * assign an id Attribute to the spans with the Category of the Tasks
  */
 function setIdToCategory() {
@@ -66,8 +73,8 @@ function setIdToCategory() {
         checkCategory(i);
     }
 }
+
 /**
- * 
  * 
  * @param {int} i - id of the spans with the Category Name
  */
@@ -93,8 +100,8 @@ function checkCategory(i) {
 
     drawBorder(result, i);
 }
+
 /**
- * 
  * @param {string} result - the content of the category element
  * @param {int} i - the number of the id from the rows
  */

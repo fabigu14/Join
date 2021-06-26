@@ -147,6 +147,10 @@ body {
     display: none;
 }
 
+.wrap-W {
+    overflow-wrap: break-word;
+}
+
 @media (max-width: 1100px) {
     .container {
         display: unset;
