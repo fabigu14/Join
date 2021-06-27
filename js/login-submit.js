@@ -1,7 +1,7 @@
 // let inputIds = ['nameInput', 'usernameInput', 'emailInput', 'passwordInput'];
 let inputIds = ['name', 'username', 'email', 'password'];
 let user = {};
-let userInputsFilled;
+// let userInputsFilled;
 
 function goToSubmit() {
     let login = document.getElementById('loginContainer');
@@ -18,9 +18,8 @@ function goToLogin() {
 
 function addUser() {
 
-    checkUserForInput();
-    if (userInputsFilled) {
-        console.log('true');
+    // checkUserForInput();
+    if (checkForInput(inputIds)) {
         setInputValues(inputIds, user);
         addDefaultImg();
         clearInput(inputIds);
@@ -30,21 +29,21 @@ function addUser() {
     }
 }
 
-function checkUserForInput() {
-    for (let i = 0; i < inputIds.length; i++) {
-        const inputField = inputIds[i];
-        let currentField = document.getElementById(inputField);
-        let inputValue = currentField.value;
-        if (inputValue == '') {
+// function checkUserForInput() {
+//     for (let i = 0; i < inputIds.length; i++) {
+//         const inputField = inputIds[i];
+//         let currentField = document.getElementById(inputField);
+//         let inputValue = currentField.value;
+//         if (inputValue == '') {
         
-            userInputsFilled = false;
-            break;
-        }
-        else {
-            userInputsFilled = true;
-        }
-    }
-}
+//             userInputsFilled = false;
+//             break;
+//         }
+//         else {
+//             userInputsFilled = true;
+//         }
+//     }
+// }
 
 function addDefaultImg() {
     user['img'] = '../img/defaultUser.png';

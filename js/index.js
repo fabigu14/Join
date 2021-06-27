@@ -42,3 +42,30 @@ function setInputValues(inputFields, JsonToFill) {
         JsonToFill[inputField] = inputValue;
     });
 }
+
+function checkForInput(inputFields) {
+    let inputsFilled = checkInputValues(inputFields);
+    if (inputsFilled) {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function checkInputValues(inputFields) {
+    let inputsFilled;
+    for (let i = 0; i < inputFields.length; i++) {
+        const inputField = inputFields[i];
+        let currentField = document.getElementById(inputField);
+        let inputValue = currentField.value;
+        if (inputValue == '') {
+        
+            inputsFilled = false;
+            break;
+        }
+        else {
+            inputsFilled = true;
+        }
+    } 
+    return inputsFilled;
+}
