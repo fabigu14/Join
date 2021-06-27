@@ -25,7 +25,7 @@
         <div class="loginSubmitContainer">
             <div class="slideBox">
 
-                <form onsubmit="login()" id="loginContainer" class="loginSubmitBox">
+                <form onsubmit="return false" id="loginContainer" class="loginSubmitBox">
                     <h2 class="loginHeader">Anmelden</h2>
 
                     <input id="loginname" class="loginSubmit" placeholder="Username" required type="text"
@@ -34,7 +34,7 @@
                     <input id="loginpassword" class="loginSubmit" placeholder="Passwort" required type="password"
                         autocomplete="current-password">
 
-                    <button class="btn loginBtn">Anmelden</button>
+                    <input type="button" value="Anmelden" class="btn loginBtn" onclick="authenticate()">
 
                     <span>Noch kein Nutzerkonto</span>
                     <span class="toggleLoginSubmit loginLink" onclick="goToSubmit()">Jetzt registrieren</span>

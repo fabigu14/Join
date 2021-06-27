@@ -54,3 +54,51 @@ function addDefaultImg() {
 // function deleteUser(name) {
 //     backend.deleteItem('users');
 //   }
+
+// var loggedIn = false;
+
+// function authenticate() {
+//     var password = document.getElementById('password').value;
+    
+//     loggedIn = login(password);
+//     status();
+//   }
+  
+//   function login(password) {
+//       var storedPassword = '123';
+  
+//       return password == storedPassword;
+//   }
+  
+//   function status() {
+//     if(loggedIn) {
+//       console.log('You are in :)');
+//     } else {
+//       console.log('You are not in :(');
+//     }
+//   }
+
+function authenticate() {
+    let loginname = document.getElementById('loginname').value;
+
+    for (let i = 0; i < users.length; i++) {
+        const username = users[i];
+        if(loginname == users[i]['username']) {
+            console.log('User gefunden', users[i]);
+            checkPassword(users[i]);
+            break;
+        } {
+            console.log('User nicht gefunden');
+        }
+    }
+}
+
+function checkPassword(user) {
+    let loginpassword = document.getElementById('loginpassword').value;
+    
+    if(loginpassword == user['password']) {
+        console.log('Authentifizierung erolgreich!');
+    } else {
+        console.log('Falsches Passwort!');
+    }
+}

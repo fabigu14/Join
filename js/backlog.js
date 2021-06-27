@@ -96,31 +96,3 @@ function drawBorder(result, i) {
     let backlogRows = document.getElementById('backlogRow_' + i);
     backlogRows.classList.add(result);
 }
-
-
-/**
- * 
- * @param {int} i - id of the spans with the Category Name
- */
-// function checkCategory(i) {
-//     let blCategory = document.getElementById('backlogCategory_' + i).textContent;
-
-//     switch (blCategory) {
-//         case 'Development':
-//             result = 'development-bl';
-//             break;
-//         case 'Design':
-//             result = 'design-bl';
-//             break;
-//         case 'Testing':
-//             result = 'testing-bl';
-//             break;
-//         case 'Management':
-//             result = 'management-bl';
-//             break;
-//         default:
-//             result = 'default-bl'; 
-//     }
-
-//     drawBorder(result, i);
-// }
