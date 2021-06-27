@@ -3,7 +3,7 @@ let task = {};
 let usersAssigned = [];
 let usersToAssign = [];
 let dropdownIsShowing = false;
-let InputsFilled;
+let taskInputsFilled;
 
 
 async function initTask() {
@@ -20,14 +20,30 @@ function initUsersToAssign() {
 
 function createTask() {
 
-    checkForInput(inputFields);
+    checkForInput();
 
-    if (InputsFilled && isUserAssigned()) {
+    if (taskInputsFilled && isUserAssigned()) {
 
-        setValues()
+        setValues();
         addToTasks();
         resetInput();
         console.log('is created');
+    }
+}
+
+function checkForInput() {
+    for (let i = 0; i < inputFields.length; i++) {
+        const inputField = inputFields[i];
+        let currentField = document.getElementById(inputField);
+        let inputValue = currentField.value;
+        if (inputValue == '') {
+        
+            taskInputsFilled = false;
+            break;
+        }
+        else {
+            taskInputsFilled = true;
+        }
     }
 }
 
@@ -43,11 +59,7 @@ function isUserAssigned() {
 }
 
 function setValues() {
-    inputFields.forEach(inputField => {
-        let currentField = document.getElementById(inputField);
-        let inputValue = currentField.value;
-        task[inputField] = inputValue;
-    });
+    setInputValues(inputFields, task);
     task['state'] = 'toDo';
     task['assigned_users'] = usersAssigned;
 }

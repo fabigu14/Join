@@ -34,18 +34,11 @@ function clearInput(inputIds){
     });
 }
 
-function checkForInput() {
-    for (let i = 0; i < inputFields.length; i++) {
-        const inputField = inputFields[i];
+
+function setInputValues(inputFields, JsonToFill) {
+    inputFields.forEach(inputField => {
         let currentField = document.getElementById(inputField);
         let inputValue = currentField.value;
-        if (inputValue == '') {
-        
-            InputsFilled = false;
-            break;
-        }
-        else {
-            InputsFilled = true;
-        }
-    }
+        JsonToFill[inputField] = inputValue;
+    });
 }
