@@ -33,3 +33,19 @@ function clearInput(inputIds){
        currentField.value = '';
     });
 }
+
+function checkForInput() {
+    for (let i = 0; i < inputFields.length; i++) {
+        const inputField = inputFields[i];
+        let currentField = document.getElementById(inputField);
+        let inputValue = currentField.value;
+        if (inputValue == '') {
+        
+            InputsFilled = false;
+            break;
+        }
+        else {
+            InputsFilled = true;
+        }
+    }
+}

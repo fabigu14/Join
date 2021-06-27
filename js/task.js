@@ -5,6 +5,7 @@ let usersToAssign = [];
 let dropdownIsShowing = false;
 let InputsFilled;
 
+
 async function initTask() {
     await init();
     initUsersToAssign();
@@ -19,14 +20,25 @@ function initUsersToAssign() {
 
 function createTask() {
 
-    checkForInput();
+    checkForInput(inputFields);
 
-    if (InputsFilled) {
+    if (InputsFilled && isUserAssigned()) {
 
         setValues()
         addToTasks();
         resetInput();
         console.log('is created');
+    }
+}
+
+function isUserAssigned() {
+    if (usersAssigned.length !== 0) {
+        return true;
+    }
+
+    else{
+        alert("please assign User");
+        return false;
     }
 }
 
@@ -38,22 +50,6 @@ function setValues() {
     });
     task['state'] = 'toDo';
     task['assigned_users'] = usersAssigned;
-}
-
-function checkForInput() {
-    inputFields.forEach(inputField => {
-        let currentField = document.getElementById(inputField);
-        let inputValue = currentField.value;
-        if (inputValue == '') {
-
-            console.log(currentField);
-            InputsFilled = false;
-        }
-        else {
-            console.log(currentField);
-            InputsFilled = true;
-        }
-    });
 }
 
 function addToTasks() {
@@ -69,32 +65,32 @@ function resetInput() {
     initUsersToAssign();
 }
 
-function showDropdown(id) {
-    document.getElementById(id + '_dropdown').classList.remove('d-none');
+function showInputDropdown(id) {
+    document.getElementById(id + '_dropdown').classList.remove('display-none');
     document.getElementById(id).classList.add('input-radius');
     dropdownIsShowing = true;
     showOverlay();
 }
 
 function showOverlay() {
-    document.getElementById('overlay').classList.remove('d-none');
+    document.getElementById('overlay').classList.remove('display-none');
 }
 
 function hideOverlay() {
-    document.getElementById('overlay').classList.add('d-none');
+    document.getElementById('overlay').classList.add('display-none');
 }
 
 function setSelection(selection, inputId) {
     document.getElementById(inputId).value = selection;
-    hideDropdown();
+    hideInputDropdown();
 }
 
-function hideDropdown() {
+function hideInputDropdown() {
     if (dropdownIsShowing) {
-        document.getElementById('category_dropdown').classList.add('d-none');
-        document.getElementById('urgency_dropdown').classList.add('d-none');
-        document.getElementById('users_to_assign').classList.add('d-none');
-        document.getElementById('users_to_assign').classList.add('d-none');
+        document.getElementById('category_dropdown').classList.add('display-none');
+        document.getElementById('urgency_dropdown').classList.add('display-none');
+        document.getElementById('users_to_assign').classList.add('display-none');
+        document.getElementById('users_to_assign').classList.add('display-none');
         hideOverlay();
         dropdownIsShowing = false;
     }
@@ -102,7 +98,7 @@ function hideDropdown() {
 
 function showUsersToAssign() {
     loadUsersToAssign();
-    document.getElementById('users_to_assign').classList.remove('d-none');
+    document.getElementById('users_to_assign').classList.remove('display-none');
     dropdownIsShowing = true;
     showOverlay();
 }
@@ -154,7 +150,7 @@ function addToAssigned(userIndex) {
     usersAssigned.push(usersToAssign[userIndex]);
     removeFromToAssign(userIndex);
     showUsersAssigned();
-    hideDropdown();
+    hideInputDropdown();
 }
 
 function removeFromToAssign(userIndex) {

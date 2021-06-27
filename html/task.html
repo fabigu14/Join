@@ -14,7 +14,7 @@
 
 <body onload="initTask()">
 
-<div id="overlay" class="d-none" onclick="hideDropdown()">
+<div id="overlay" class="display-none" onclick="hideInputDropdown()">
 
 </div>
     <div id="nav_placeholder">
@@ -53,11 +53,11 @@
                     <label for="category">CATEGORY</label>
                     <div id="category" class="input-field">
                         <input type="text" id="category_value" placeholder="Category" required>
-                        <div onclick="showDropdown('category')" class="img-div crs-pointer">
+                        <div onclick="showInputDropdown('category')" class="img-div crs-pointer">
                             <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
                     </div>
-                    <div id="category_dropdown" class="dropdown d-none">
+                    <div id="category_dropdown" class="dropdown display-none">
                         <div id="development" class="options" onclick="setSelection('Development', 'category_value')">
                             <span>Development</span>
                         </div>
@@ -79,12 +79,12 @@
                     <label for="urgency">URGENCY</label>
                     <div id="urgency" class="input-field">
                         <input type="text" id="urgency_value" placeholder="Urgency" required>
-                        <div onclick="showDropdown('urgency')" class="img-div crs-pointer">
+                        <div onclick="showInputDropdown('urgency')" class="img-div crs-pointer">
                             <img  class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
                     </div>
 
-                    <div id="urgency_dropdown" class="dropdown d-none">
+                    <div id="urgency_dropdown" class="dropdown display-none">
                         <div id="low" class="options" onclick="setSelection('Low', 'urgency_value')">
                             <span>Low</span>
                         </div>
@@ -120,12 +120,12 @@
                                 
                                 <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
                             </div>
-                            <div id="users_to_assign" class="assign-user d-none">
+                            <div id="users_to_assign" class="assign-user display-none">
                                     
                             </div>
                         </div>
                         <div class="btns">
-                            <button class="crs-pointer" id="cancel_btn" onclick="clearInput()">CANCEL</button>
+                            <button class="crs-pointer" id="cancel_btn" onclick="resetInput()">CANCEL</button>
                             <button class="crs-pointer" id="create_btn" onclick="createTask()">CREATE TASK</button>
                         </div>
                     </div>
