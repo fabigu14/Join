@@ -54,10 +54,11 @@ function addDefaultImg() {
 //     backend.deleteItem('users');
 //   }
 
-let userData = true;
-let currentNumber;
+let currentUserId;
+let checkedUserNumber;
 
 function login() {
+    checkedUserNumber = 0;
     authenticate();
 }
 
@@ -65,30 +66,39 @@ function authenticate() {
     let loginname = document.getElementById('loginname');
 
     checkUserId(loginname.value);
-
-    checkPassword(currentNumber);
+    loginname.value = '';
+    checkPassword(currentUserId);
 }
 
 function checkUserId(loginname) {
+
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         if (loginname == user['username']) {
-            return currentNumber = i;
+            return currentUserId = i;
+        } else {
+            checkedUserNumber++;
         }
     }
-    
+    nonUserFound(checkedUserNumber);
+}
+
+function nonUserFound(checkedUserNumber) {
+    if(checkedUserNumber > 0) {
+        alert('User do not exist!');
+    }
 }
 
 
 function checkPassword(i) {
-    let loginpassword = document.getElementById('loginpassword').value;
+    let loginpassword = document.getElementById('loginpassword');
     let currentUser = users[i];
 
-    if (loginpassword == currentUser['password']) {
-        console.log('Authentifizierung erolgreich!');
+    if (loginpassword.value == currentUser['password']) {
         alert('Authentifizierung erolgreich!');
+        
     } else {
-        console.log('Falsches Passwort!');
         alert('Falsches Passwort!');
     }
+    loginpassword.value = '';
 }
