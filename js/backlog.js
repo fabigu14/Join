@@ -41,11 +41,9 @@ function renderBacklogRows(task, user) {
                         </div>
                     </div>
                         <div class="blCategories">
-                            <span class="hiddenText">Category:</span>
                             <span class="blCategory wrap-W">${task['category_value']}</span>
                         </div>
                         <div class="blDetails">
-                            <span class="hiddenText">Description:</span>
                             <span class="wrap-W">${task['description']}</span>
                         </div>
                 </div>`;
@@ -74,31 +72,20 @@ function setIdToCategory() {
     }
 }
 
+let category = {
+    'Development': 'development-bl',
+    'Design': 'design-bl',
+    'Testing': 'testing-bl',
+    'Management': 'management-bl'
+};
+
 /**
  * 
- * @param {int} i - id of the spans with the Category Name
+ * @param {int} i - id of the current row 
  */
 function checkCategory(i) {
     let blCategory = document.getElementById('backlogCategory_' + i).textContent;
-
-    switch (blCategory) {
-        case 'Development':
-            result = 'development-bl';
-            break;
-        case 'Design':
-            result = 'design-bl';
-            break;
-        case 'Testing':
-            result = 'testing-bl';
-            break;
-        case 'Management':
-            result = 'management-bl';
-            break;
-        default:
-            result = 'default-bl'; 
-    }
-
-    drawBorder(result, i);
+    drawBorder(category[blCategory], i);
 }
 
 /**
@@ -110,11 +97,30 @@ function drawBorder(result, i) {
     backlogRows.classList.add(result);
 }
 
-// let category = {
-//     'Development': 'development-bl',
-//     'Design': 'design-bl'
-// };
+
+/**
+ * 
+ * @param {int} i - id of the spans with the Category Name
+ */
 // function checkCategory(i) {
 //     let blCategory = document.getElementById('backlogCategory_' + i).textContent;
-//     drawBorder(category[blCategory], i);
+
+//     switch (blCategory) {
+//         case 'Development':
+//             result = 'development-bl';
+//             break;
+//         case 'Design':
+//             result = 'design-bl';
+//             break;
+//         case 'Testing':
+//             result = 'testing-bl';
+//             break;
+//         case 'Management':
+//             result = 'management-bl';
+//             break;
+//         default:
+//             result = 'default-bl'; 
+//     }
+
+//     drawBorder(result, i);
 // }
