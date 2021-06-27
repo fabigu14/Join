@@ -35,7 +35,7 @@ function addUser() {
 //         let currentField = document.getElementById(inputField);
 //         let inputValue = currentField.value;
 //         if (inputValue == '') {
-        
+
 //             userInputsFilled = false;
 //             break;
 //         }
@@ -54,50 +54,41 @@ function addDefaultImg() {
 //     backend.deleteItem('users');
 //   }
 
-// var loggedIn = false;
+let userData = true;
+let currentNumber;
 
-// function authenticate() {
-//     var password = document.getElementById('password').value;
-    
-//     loggedIn = login(password);
-//     status();
-//   }
-  
-//   function login(password) {
-//       var storedPassword = '123';
-  
-//       return password == storedPassword;
-//   }
-  
-//   function status() {
-//     if(loggedIn) {
-//       console.log('You are in :)');
-//     } else {
-//       console.log('You are not in :(');
-//     }
-//   }
-
-function authenticate() {
-    let loginname = document.getElementById('loginname').value;
-
-    for (let i = 0; i < users.length; i++) {
-        const username = users[i];
-        if(loginname == users[i]['username']) {
-            console.log('User gefunden', users[i]);
-            checkPassword(users[i]);
-            break;
-        } {
-            console.log('User nicht gefunden');
-        }
-    }
+function login() {
+    authenticate();
 }
 
-function checkPassword(user) {
-    let loginpassword = document.getElementById('loginpassword').value;
+function authenticate() {
+    let loginname = document.getElementById('loginname');
+
+    checkUserId(loginname.value);
+
+    checkPassword(currentNumber);
+}
+
+function checkUserId(loginname) {
+    for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        if (loginname == user['username']) {
+            return currentNumber = i;
+        }
+    }
     
-    if(loginpassword == user['password']) {
+}
+
+
+function checkPassword(i) {
+    let loginpassword = document.getElementById('loginpassword').value;
+    let currentUser = users[i];
+
+    if (loginpassword == currentUser['password']) {
         console.log('Authentifizierung erolgreich!');
+        alert('Authentifizierung erolgreich!');
     } else {
         console.log('Falsches Passwort!');
+        alert('Falsches Passwort!');
     }
 }
