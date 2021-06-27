@@ -107,6 +107,7 @@ span {
 @media (max-width: 1100px) {
     .container {
         display: inherit;
+        max-width: 100%;
     }
     .slideBox {
         margin-top: 50px;
