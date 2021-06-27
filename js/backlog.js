@@ -109,3 +109,12 @@ function drawBorder(result, i) {
     let backlogRows = document.getElementById('backlogRow_' + i);
     backlogRows.classList.add(result);
 }
+
+// let category = {
+//     'Development': 'development-bl',
+//     'Design': 'design-bl'
+// };
+// function checkCategory(i) {
+//     let blCategory = document.getElementById('backlogCategory_' + i).textContent;
+//     drawBorder(category[blCategory], i);
+// }

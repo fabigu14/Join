@@ -1,5 +1,19 @@
 <link rel="stylesheet" href="../css/navbar.css">
 
+<script>
+    function showDropdown() {
+        document.getElementById('showIcon').classList.add('d-none');
+        document.getElementById('hideIcon').classList.remove('d-none');
+        document.getElementById('dropDownMenu').style = 'transform: translateY(-1%);';
+    }
+
+    function HideDropdown() {
+        document.getElementById('showIcon').classList.remove('d-none');
+        document.getElementById('hideIcon').classList.add('d-none');
+        document.getElementById('dropDownMenu').style = 'transform: translateY(-150%);';
+    }
+</script>
+
 <nav id="navbar">
     <div class="navRow">
         <div class="logo"   >
@@ -11,13 +25,19 @@
             <a href="../html/backlog.html">Backlog</a>
             <a href="../html/task.html">Add Task</a>
             <a href="#">Help</a>
-            <a href="../html/login-submit.html">Login zum Testen</a>
+            <a href="../html/login-submit.html">Login</a>    
+            <div class="profile-img">
+                <img src="../img/fabi.jpg" alt="profile-img">
+            </div>
         </div>
-
     </div>
-
-    <div class="profile-img">
-        <img src="../img/fabi.jpg" alt="profile-img">
+    <span onclick="showDropdown()" id="showIcon" class="hamburgerIcon">&#9776;</span>
+    <span onclick="HideDropdown()" id="hideIcon" class="hamburgerIcon d-none">&#9776;</span>
+    <div id="dropDownMenu" class="dropDownMenu" style="transform: translateY(-150%)">
+        <a href="../html/board.html">Board</a>
+        <a href="../html/backlog.html">Backlog</a>
+        <a href="../html/task.html">Add Task</a>
+        <a href="#">Help</a>
+        <a href="../html/login-submit.html">Login</a>
     </div>
-   
-</nav>
+</nav> 
