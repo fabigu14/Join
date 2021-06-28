@@ -14,10 +14,9 @@ body {
     font-family: 'PT Sans', sans-serif !important;
 }
 
-.container {
+/* .container {
     display: flex;
-    font-family: 'PT Sans', sans-serif;
-}
+} */
 
 #nav_placeholder {
     position: fixed;
