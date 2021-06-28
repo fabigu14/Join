@@ -1,4 +1,5 @@
 let currentDraggedElement;
+let currentDraggedCategory;
 
 
 async function initboard(){
@@ -15,21 +16,19 @@ async function initboard(){
 function updateHTML(){
     
     let toDo = tasks.filter(t => t['state'] == 'toDo');
+    update('toDo', toDo);
 
     let inProgress = tasks.filter(t => t['state'] == 'inProgress');
+    update('inProgress', inProgress);
     
     console.log(inProgress);
     let testing = tasks.filter(t => t['state'] == 'testing');
+    update('testing', testing);
     
     console.log(testing);
     let done = tasks.filter(t => t['state'] == 'done');
-    
-    
-    update('toDo', toDo);
-    update('inProgress', inProgress);
-    update('testing', testing);
     update('done', done);
-
+    
 
 }
 
@@ -46,7 +45,7 @@ function update(containerID, array){
 
 function generateToDoHTML(element, i){
 
-    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i})" class="taskContainer">${element['title']}</div>
+    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i}, ${element[i]['state']})" class="taskContainer">${element['title']}</div>
             
 
             <div id="openContainer" class="openContainer d-none">
@@ -74,11 +73,11 @@ function generateToDoHTML(element, i){
 }
 
 
-function startdragging(id){
-    console.log(id);
-    currentDraggedElement = id;
+function startdragging(id, category){
     
-
+    currentDraggedElement = id;
+    currentDraggedCategory = category;
+    
 }
 
 function allowDrop(ev) {
@@ -87,8 +86,9 @@ function allowDrop(ev) {
 }
 
 function moveTo(category){
-
-    tasks[currentDraggedElement]['state'] = category;
+    
+    let toMove = tasks.filter(element => element['state'] == currentDraggedCategory);
+    toMove[currentDraggedElement]['state'] = category;
     updateHTML();
 
 }
