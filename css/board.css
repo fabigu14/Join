@@ -7,7 +7,7 @@ body {
 .custom-container {
     
     display: flex;
-    
+    margin-left: 150px;
 }
 
 .box {
@@ -182,7 +182,7 @@ h3 {
 
     .custom-container{
         margin-top: 80px;
-
+        margin-left: 0px;
         
     }
 

@@ -12,6 +12,7 @@ h1 {
 .main-div {
     padding: 20px;
     width: 930px;
+    margin-left: 150px;
 }
 
 .subline {
@@ -254,5 +255,6 @@ input:focus {
 @media(max-width: 1100px) {
     .main-div {
         margin-top: 80px;
+        margin-left: 0;
     }
 }
