@@ -14,18 +14,6 @@ body {
     font-family: 'PT Sans', sans-serif !important;
 }
 
-/* .container {
-    display: flex;
-} */
-
-#nav_placeholder {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 10;
-}
-
 .backlogContainer {
     height: calc(100vh - 32px);
     padding: 32px;

@@ -95,10 +95,10 @@ function checkPassword(i) {
     let currentUser = users[i];
 
     if (loginpassword.value == currentUser['password']) {
-        alert('Authentifizierung erolgreich!');
+        window.location.href = '../html/board.html';
         setArray('loggedUser', currentUser);
     } else {
-        alert('Falsches Passwort!');
+        alert('Wrong Password!');
     }
     loginpassword.value = '';
 }
