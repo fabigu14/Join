@@ -1,6 +1,6 @@
 let currentDraggedElement;
 let currentDraggedCategory;
-
+let containerId = 0;
 
 async function initboard(){
     
@@ -21,41 +21,44 @@ function updateHTML(){
     let inProgress = tasks.filter(t => t['state'] == 'inProgress');
     update('inProgress', inProgress);
     
-    console.log(inProgress);
     let testing = tasks.filter(t => t['state'] == 'testing');
     update('testing', testing);
     
-    console.log(testing);
     let done = tasks.filter(t => t['state'] == 'done');
     update('done', done);
     
-
+    containerId = 0;
 }
 
 function update(containerID, array){
-
+    
     document.getElementById(containerID).innerHTML = '';
     for (let i = 0; i < array.length; i++) {
     const element = array[i];
     document.getElementById(containerID).innerHTML += generateToDoHTML(element,i);
-        
+
+    console.log(containerId);
+    containerId++;
+    
     }
 
 }
 
 function generateToDoHTML(element, i){
+    
 
-    return `<div draggable="true" onclick="openContainer(${element[i]})" ondragstart="startdragging(${i}, ${element[i]['state']})" class="taskContainer">${element['title']}</div>
+    console.log(containerId);
+    return `<div draggable="true" onclick="openContainer(${i})" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer">${element['title']}</div>
             
 
-            <div id="openContainer" class="openContainer d-none">
+            <div id="openContainer${containerId}" class="openContainer d-none">
             <div class="infoBox">
             <div class="headlinebox">
-            <div class="headline"><h2>${element['title']}</h2></div>
+            <div class="headline"><h2>${tasks[containerId]['title']}</h2></div>
             <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
             </div>
-            <div class="descriptionContainer">${element['description']}</div>
-            <div class="date-section"><p>Deadline: ${element['due_date']}</p></div>
+            <div class="descriptionContainer">${tasks[containerId]['description']}</div>
+            <div class="date-section"><p>Deadline: ${tasks[containerId]['due_date']}</p></div>
             
             <div class="assigned-container">
             <div class="assignedUser"><p>Assigned To:</p></div>
@@ -69,12 +72,13 @@ function generateToDoHTML(element, i){
             </div>
       
     `;
+    
 
 }
 
 
 function startdragging(id, category){
-    
+    // console.log(category);
     currentDraggedElement = id;
     currentDraggedCategory = category;
     
@@ -86,8 +90,9 @@ function allowDrop(ev) {
 }
 
 function moveTo(category){
-    
+    console.log(currentDraggedCategory);
     let toMove = tasks.filter(element => element['state'] == currentDraggedCategory);
+    // console.log(toMove);
     toMove[currentDraggedElement]['state'] = category;
     updateHTML();
 
@@ -104,9 +109,9 @@ function removehighlight(id){
     document.getElementById(id).classList.remove('grey-box-highlight');
 
 }
-function openContainer(){
-
-    document.getElementById('openContainer').classList.remove('d-none');
+function openContainer(id){
+    console.log(id);
+    document.getElementById(`openContainer` + id).classList.remove('d-none');
         
 }
 

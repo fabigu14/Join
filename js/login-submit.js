@@ -18,7 +18,7 @@ function goToLogin() {
 
 function addUser() {
 
-    // checkUserForInput();
+    
     if (checkForInput(inputIds)) {
         setInputValues(inputIds, user);
         addDefaultImg();
@@ -29,21 +29,6 @@ function addUser() {
     }
 }
 
-// function checkUserForInput() {
-//     for (let i = 0; i < inputIds.length; i++) {
-//         const inputField = inputIds[i];
-//         let currentField = document.getElementById(inputField);
-//         let inputValue = currentField.value;
-//         if (inputValue == '') {
-
-//             userInputsFilled = false;
-//             break;
-//         }
-//         else {
-//             userInputsFilled = true;
-//         }
-//     }
-// }
 
 function addDefaultImg() {
     user['img'] = '../img/defaultUser.png';
