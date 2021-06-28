@@ -7,11 +7,13 @@ function goToSubmit() {
     let login = document.getElementById('loginContainer');
     let submit = document.getElementById('submitContainer');
 
+    document.getElementById('guestContainer').classList.add('d-none');
     login.style = 'transform: translateY(120%)';
     submit.style = 'transform: translateY(0%)';
 }
 
 function goToLogin() {
+    document.getElementById('guestContainer').classList.remove('d-none');
     document.getElementById('loginContainer').style = 'transform: translateY(0%)';
     document.getElementById('submitContainer').style = 'transform: translateY(100%)';
 }
@@ -57,6 +59,11 @@ function addDefaultImg() {
 let currentUserId;
 let checkedUserNumber;
 
+function loginAsGuest() {
+    checkUserId('test');
+    checkPassword(currentUserId, 'tes');
+}
+
 function login() {
     checkedUserNumber = 0;
     authenticate();
@@ -84,17 +91,17 @@ function checkUserId(loginname) {
 }
 
 function nonUserFound(checkedUserNumber) {
-    if(checkedUserNumber > 0) {
+    if (checkedUserNumber > 0) {
         alert('User do not exist!');
     }
 }
 
 
-function checkPassword(i) {
+function checkPassword(i, guestPassword) {
     let loginpassword = document.getElementById('loginpassword');
     let currentUser = users[i];
 
-    if (loginpassword.value == currentUser['password']) {
+    if (loginpassword.value == currentUser['password'] || guestPassword == currentUser['password']) {
         window.location.href = '../html/board.html';
         setArray('loggedUser', currentUser);
     } else {
