@@ -99,6 +99,7 @@ body {
     }
     #nav_placeholder {
         right: 0;
+        bottom: unset;
     }
     .navRow {
         display: flex;

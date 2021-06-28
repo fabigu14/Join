@@ -1,5 +1,6 @@
 let currentDraggedElement;
 
+
 async function initboard(){
     
     await init();
