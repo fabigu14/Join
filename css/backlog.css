@@ -167,9 +167,9 @@ body {
 }
 
 @media (max-width: 1100px) {
-    .container {
+    /* .container {
         display: unset;
-    }
+    } */
     #nav_placeholder {
         right: 0;
     }

@@ -250,3 +250,9 @@ input:focus {
 .tooltip:hover .tooltip-text {
     visibility: visible;
 }
+
+@media(max-width: 1100px) {
+    .main-div {
+        margin-top: 80px;
+    }
+}
