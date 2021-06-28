@@ -96,9 +96,19 @@ function checkPassword(i) {
 
     if (loginpassword.value == currentUser['password']) {
         alert('Authentifizierung erolgreich!');
-        
+        setArray('loggedUser', currentUser);
     } else {
         alert('Falsches Passwort!');
     }
     loginpassword.value = '';
+}
+
+
+function setArray(key, array) {
+    localStorage.setItem(key, JSON.stringify(array));
+}
+
+
+function getArray(key) {
+    return JSON.parse(localStorage.getItem(key)) || [];
 }
