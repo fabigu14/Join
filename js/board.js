@@ -44,12 +44,21 @@ function generateToDoHTML(element, i){
     
 
     console.log(element);
-    return `<div draggable="true" onclick="openContainer('${element['title']}', '${element['description']}', '${element['due_date']}')" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer">${element['title']}</div>
-            <div id="openContainer" class="openContainer d-none">
+    return `<div draggable="true" onclick="openContainer('${element['title']}', '${element['description']}', '${element['due_date']}')" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer design-bl">${element['title']}</div>
+            <div id="openContainer" class="openContainer  d-none">
             </div>
     `;
 
 }
+
+let category = {
+    'Development': 'development-bl',
+    'Design': 'design-bl',
+    'Testing': 'testing-bl',
+    'Management': 'management-bl'
+};
+
+
 
 
 function startdragging(id, category){

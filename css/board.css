@@ -48,13 +48,38 @@ h3 {
     border-radius: 10px;
     text-align: center;
     background-color: #fdfdfd;
-    color: #1f1fa0;
-    border-left: 6px solid;
     cursor: pointer;
     box-shadow: 5px 5px 15px 5px #00000024;
     position: relative;
     margin-left: 13px;
+    color: #1f1fa0;
     
+}
+
+.development-bl {
+    border-left: 6px solid #1f1fa0;
+}
+
+.design-bl {
+    border-left: 6px solid green;
+}
+
+.testing-bl {
+    border-left: 6px solid yellow;
+}
+
+.management-bl {
+    border-left: 6px solid red;
+}
+
+.default-bl {
+    border-left: 6px solid gray;
+}
+
+.backlogUser {
+    display: flex;
+    width: 30%;
+    align-items: center;
 }
 
 .openContainer {
@@ -68,6 +93,7 @@ h3 {
     justify-content: center;
     align-items: center;
     background-color: #817a7a4f;
+    
 }
 
 .infoBox {
@@ -78,7 +104,6 @@ h3 {
     background-color: white;
     width: 30%;
     border-radius: 25px;
-    border-left: 15px solid #1b2d91;
     word-break: break-word;
     box-shadow: 5px 5px 15px 5px #00000024;
     
