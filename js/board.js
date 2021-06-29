@@ -94,7 +94,7 @@ function removehighlight(id){
 
 }
 function openContainer(title, description, due_date){
-    console.log(title);
+    
     let container = document.getElementById(`openContainer`);
 
     container.innerHTML = `<div class="infoBox">
@@ -107,16 +107,15 @@ function openContainer(title, description, due_date){
     
     <div class="assigned-container">
     <div class="assignedUser"><p>Assigned To:</p></div>
+
     <div class="profileImage">
-    <img src="../img/fabi.jpg" alt="profile-img">
-    </div>
-    
+    <img src="../img/fabi.jpg" alt="profile-img"></div>
     <div onclick="deletetasks()" class="deleteButton">
     <button>Delete</button>
+    </div>
     </div>`
     container.classList.remove('d-none');
 
-        
 }
 
 function closeContainer(){

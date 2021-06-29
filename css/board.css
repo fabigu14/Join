@@ -97,10 +97,9 @@ h3 {
 }
 
 .infoBox {
-    position: relative;
-    flex-direction: column;
-    display: flex;
-    height: 450px;
+    
+    flex-direction: column; 
+    height: 410px;
     background-color: white;
     width: 30%;
     border-radius: 25px;
@@ -121,7 +120,7 @@ h3 {
     width: 90%;
     background-color: white;
     margin-left: 10px;
-    height: 128px;
+    height: 100px;
     border-radius: 10px;
     padding-left: 20px;
     word-break: break-word;
@@ -140,7 +139,7 @@ h3 {
 
 .assignedUser p{
 
-    font-size:20px;
+    
     padding-left: 15px;
 }
 
@@ -157,9 +156,9 @@ h3 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-top: 30px;
-    padding: 10px;
-    border: 1px solid white;
+    padding-right: 15px;
+    ;
+    
 
 }
 
@@ -227,7 +226,6 @@ h3 {
         background-color: white;
         width: 50%;
         border-radius: 25px;
-        border-left: 15px solid #1b2d91;
         word-break: break-word;
         box-shadow: 5px 5px 15px 5px #00000024;
     
@@ -238,7 +236,7 @@ h3 {
     width: 85%;
     background-color: white;
     margin-left: 10px;
-    height: 128px;
+    height: 200px;
     border-radius: 10px;
     padding-left: 20px;
     word-break: break-word;
