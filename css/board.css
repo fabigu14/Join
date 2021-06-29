@@ -225,3 +225,21 @@ h3 {
     }
 
 }
+
+@media (max-width: 800px) {
+
+    .infoBox {
+        position: relative;
+        flex-direction: column;
+        display: flex;
+        height: 400px;
+        background-color: white;
+        width: 90%;
+        border-radius: 25px;
+        border-left: 15px solid #1b2d91;
+        word-break: break-word;
+        box-shadow: 5px 5px 15px 5px #00000024;
+
+
+}
+
