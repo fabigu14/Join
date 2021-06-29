@@ -184,17 +184,44 @@ h3 {
 
         height: 100vh;
         padding-left: 0px;
-        padding-right: 17px;
+        padding-right: 11px;
     }
 
     .custom-container{
         
         margin-top: 90px;
         margin-left: 10px;
-       
-        
         
     }
 
+    .infoBox {
+        position: relative;
+        flex-direction: column;
+        display: flex;
+        height: 400px;
+        background-color: white;
+        width: 50%;
+        border-radius: 25px;
+        border-left: 15px solid #1b2d91;
+        word-break: break-word;
+        box-shadow: 5px 5px 15px 5px #00000024;
+    
+
+    }
+
+    .descriptionContainer {
+    width: 85%;
+    background-color: white;
+    margin-left: 10px;
+    height: 128px;
+    border-radius: 10px;
+    padding-left: 20px;
+    word-break: break-word;
+    border: 2px solid #dfdfdf;
+    overflow: auto;
+    font-size: 20px;
+    padding: 10px;
+    
+    }
 
 }
