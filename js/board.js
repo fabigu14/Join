@@ -51,16 +51,6 @@ function generateToDoHTML(element, i){
 
 }
 
-let category = {
-    'Development': 'development-bl',
-    'Design': 'design-bl',
-    'Testing': 'testing-bl',
-    'Management': 'management-bl'
-};
-
-
-
-
 function startdragging(id, category){
     // console.log(category);
     currentDraggedElement = id;
@@ -97,7 +87,7 @@ function openContainer(title, description, due_date){
     
     let container = document.getElementById(`openContainer`);
 
-    container.innerHTML = `<div class="infoBox">
+    container.innerHTML = `<div class="infoBox design-bl">
     <div class="headlinebox">
     <div class="headline"><h2>${title}</h2></div>
     <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
