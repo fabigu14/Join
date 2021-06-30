@@ -35,9 +35,20 @@ function update(containerID, array){
     let element = array[i];
     document.getElementById(containerID).innerHTML += generateToDoHTML(element,i);
 
+    for (let j = 0; j < users.length; j++) {
+        const user = users[j];
+        
+    
+    
+    }
+    
     }
 
 }
+
+
+
+
 
 function generateToDoHTML(element, i){
     
@@ -83,7 +94,7 @@ function removehighlight(id){
     document.getElementById(id).classList.remove('grey-box-highlight');
 
 }
-function openContainer(title, description, due_date, user){
+function openContainer(title, description, due_date, users){
     
     let container = document.getElementById(`openContainer`);
 
@@ -96,7 +107,7 @@ function openContainer(title, description, due_date, user){
     <div class="date-section"><p>Deadline: ${due_date}</p></div>
     
     <div class="assigned-container">
-    <div class="assignedUser"><p>Assigned To: ${user}</p></div>
+    <div class="assignedUser"><p>Assigned To: ${users}</p></div>
 
     <div class="profileImage">
     <img src="../img/fabi.jpg" alt="profile-img"></div>
