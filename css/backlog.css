@@ -12,6 +12,7 @@
 body {
     margin: 0;
     font-family: 'PT Sans', sans-serif !important;
+    background-color: rgba(0, 0, 0, .02);
 }
 
 .backlogContainer {
@@ -31,6 +32,7 @@ body {
     padding-top: 40px;
     padding-left: 8px;
     margin: 0px -8px;
+    background-color: #fafafa;
 }
 
 .headlineContainer>h2 {

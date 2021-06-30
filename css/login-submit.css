@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'PT Sans', sans-serif !important;
+    background-color: #fafafa;
 }
 
 .d-none {
@@ -10,6 +11,7 @@ body {
 .container {
     display: flex;
     max-width: 930px;
+    height: 100vh;
 }
 
 .loginSubmitContainer {
@@ -17,7 +19,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 180px;
 }
 
 .loginSubmitBox {
