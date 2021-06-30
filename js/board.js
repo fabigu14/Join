@@ -2,10 +2,9 @@ let currentDraggedElement;
 let currentDraggedCategory;
 
 async function initboard(){
-    
+    setQueryStringParameter('currentUser', currentUser['username']);
     await init();
     updateHTML();
-
 }
 /**
  * 

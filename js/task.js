@@ -6,6 +6,7 @@ let dropdownIsShowing = false;
 
 
 async function initTask() {
+    setQueryStringParameter('currentUser', currentUser['username']);
     await init();
     initUsersToAssign();
 }

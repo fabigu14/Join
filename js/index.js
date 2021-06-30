@@ -4,16 +4,7 @@ let currentUser = getArray('loggedUser');
 
 
 async function init() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('currentUser');
-    
-    
-    if(currentUserIsUndefined(myParam)) {
-        goToLoginPage();
-    }
-
-    setQueryStringParameter('currentUser', currentUser['username']);
-
+    controleLoggedUser();
     loadNav();
     setURL('http://gruppe-83.developerakademie.com/smallest_backend_ever');
     await downloadFromServer();
@@ -89,6 +80,14 @@ function goToLoginPage() {
 }
 
 
+function controleLoggedUser() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('currentUser');
+    
+    if(currentUserIsUndefined(myParam)) {
+        goToLoginPage();
+    }
+}
 
 /**
  *  Function to add Parameter to the Url    
@@ -106,6 +105,11 @@ function setQueryStringParameter(name, value) {
  * @param {string} key -name of the json in localstorage
  * @returns 
  */
+
+
+ function setArray(key, array) {
+    localStorage.setItem(key, JSON.stringify(array));
+}
 
 function getArray(key) {
     return JSON.parse(localStorage.getItem(key)) || [];

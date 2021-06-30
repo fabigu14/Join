@@ -1,5 +1,6 @@
 
 async function initBacklog() {
+    setQueryStringParameter('currentUser', currentUser['username']);
     await init();
     updateBacklog();
 }
