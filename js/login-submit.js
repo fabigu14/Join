@@ -23,7 +23,7 @@ function goToLogin() {
 }
 
 function addUser() {
-    if (checkForInput(inputIds)) {
+    if (checkForInput(inputIds) && !userExists()) {
         setInputValues(inputIds, user);
         addDefaultImg();
         clearInput(inputIds);
@@ -31,6 +31,35 @@ function addUser() {
         saveUsersToServer();
         console.log('created');
     }
+}
+
+function userExists() {
+    let userExists = checkUserExists();
+    if (userExists) {
+        alert("E-Mail already exists");
+        return true
+    } else {
+        return false;
+    }
+}
+
+function checkUserExists() {
+    let userExists;
+    let mailInput = document.getElementById('email');
+    console.log(mailInput);
+    for (let i = 0; i < users.length; i++) {
+        const email = users[i]['email'];
+        console.log(email);
+        if (mailInput.value == email) {
+
+            userExists = true;
+            break;
+        }
+        else {
+            userExists = false;
+        }
+    }
+    return userExists;
 }
 
 
