@@ -2,9 +2,15 @@ body {
     background-color: rgba(0, 0, 0, .02);
 }
 .container {
-    height: 100vh;
     margin-left: 200px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     font-family: 'PT Sans', sans-serif !important;
+}
+
+@media(max-width: 1100px) {
+    .container {
+        margin-left: 40px;
+    }
 }
