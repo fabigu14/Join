@@ -14,7 +14,10 @@ function goToSubmit() {
 }
 
 function goToLogin() {
-    document.getElementById('guestContainer').classList.remove('d-none');
+    setTimeout(() => {
+        document.getElementById('guestContainer').classList.remove('d-none');    
+    }, 150);
+    
     document.getElementById('loginContainer').style = 'transform: translateY(0%)';
     document.getElementById('submitContainer').style = 'transform: translateY(100%)';
 }
