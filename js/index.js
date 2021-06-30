@@ -70,16 +70,6 @@ function checkInputValues(inputFields) {
 }
 
 
-function currentUserIsUndefined(params) {
-    return    params == 'undefined';
-}
-
-
-function goToLoginPage() {
-    window.location.href = "login-submit.html";
-}
-
-
 function controleLoggedUser() {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('currentUser');
@@ -87,6 +77,14 @@ function controleLoggedUser() {
     if(currentUserIsUndefined(myParam)) {
         goToLoginPage();
     }
+}
+
+function currentUserIsUndefined(params) {
+    return    params == 'undefined';
+}
+
+function goToLoginPage() {
+    window.location.href = "login-submit.html";
 }
 
 /**
@@ -106,6 +104,10 @@ function setQueryStringParameter(name, value) {
  * @returns 
  */
 
+function logout() {
+    localStorage.removeItem('loggedUser');
+    goToLoginPage();
+}
 
  function setArray(key, array) {
     localStorage.setItem(key, JSON.stringify(array));

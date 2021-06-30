@@ -48,15 +48,6 @@ body {
     padding-left: 20px;
 }
 
-/* .profile-img{
-    padding: 2px;
-    border-radius: 100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 .profile-img img {
     height: 75px;
     border-radius: 100%;
@@ -133,7 +124,7 @@ body {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .links {
         display: none;
     }

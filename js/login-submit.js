@@ -1,7 +1,8 @@
-// let inputIds = ['nameInput', 'usernameInput', 'emailInput', 'passwordInput'];
 let inputIds = ['name', 'username', 'email', 'password'];
 let user = {};
-// let userInputsFilled;
+let currentUserId;
+let checkedUserNumber;
+
 
 function goToSubmit() {
     let login = document.getElementById('loginContainer');
@@ -19,8 +20,6 @@ function goToLogin() {
 }
 
 function addUser() {
-
-    
     if (checkForInput(inputIds)) {
         setInputValues(inputIds, user);
         addDefaultImg();
@@ -41,8 +40,6 @@ function addDefaultImg() {
 //     backend.deleteItem('users');
 //   }
 
-let currentUserId;
-let checkedUserNumber;
 
 function loginAsGuest() {
     checkUserId('test');
@@ -93,9 +90,4 @@ function checkPassword(i, guestPassword) {
         alert('Wrong Password!');
     }
     loginpassword.value = '';
-}
-
-
-function setArray(key, array) {
-    localStorage.setItem(key, JSON.stringify(array));
 }
