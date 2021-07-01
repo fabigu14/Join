@@ -10,7 +10,9 @@ async function init() {
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
+    showAndHideLinks();
 }
+
 
 function loadNav() {
     $.get("navbar.html", function (data) {
@@ -70,17 +72,28 @@ function checkInputValues(inputFields) {
 }
 
 
+function showAndHideLinks() {
+    let unloggedHides = ['siteLinks', 'logoutBtn', 'dropDownMenu', 'showIcon', 'hideIcon'];
+
+    if (currentUser == '') {
+        unloggedHides.forEach(unloggedHide => {
+            document.getElementById(unloggedHide).classList.add('d-none');
+        });
+    }
+}
+
+
 function controleLoggedUser() {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('currentUser');
-    
-    if(currentUserIsUndefined(myParam)) {
+
+    if (currentUserIsUndefined(myParam)) {
         goToLoginPage();
     }
 }
 
 function currentUserIsUndefined(params) {
-    return    params == 'undefined';
+    return params == 'undefined';
 }
 
 function goToLoginPage() {
@@ -109,7 +122,7 @@ function logout() {
     goToLoginPage();
 }
 
- function setArray(key, array) {
+function setArray(key, array) {
     localStorage.setItem(key, JSON.stringify(array));
 }
 

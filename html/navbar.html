@@ -7,7 +7,7 @@
         document.getElementById('dropDownMenu').style = 'transform: translateY(-1%);';
     }
 
-    function HideDropdown() {
+    function hideDropdown() {
         document.getElementById('showIcon').classList.remove('d-none');
         document.getElementById('hideIcon').classList.add('d-none');
         document.getElementById('dropDownMenu').style = 'transform: translateY(-150%);';
@@ -15,18 +15,20 @@
 </script>
 
 <nav id="navbar">
-    <div class="navRow">
+    <div onclick="hideDropdown()" class="navRow">
         <div class="logo">
             <img src="../img/logo.png" alt="logo">
         </div>
 
-        <div class="links">
+        <div id="siteLinks" class="links">
             <a href="../html/board.html">Board</a>
             <a href="../html/backlog.html">Backlog</a>
             <a href="../html/task.html">Add Task</a>
             <a href="#">Help</a>
-            <a href="../html/login-submit.html">Login</a>
-            <a href="#" onclick="logout()">Log Out</a>
+        </div>
+        <div class="links">
+            
+            <a id="logoutBtn" href="#" onclick="logout()">Log Out</a>
         </div>
     </div>
     <div class="footerContainer">
@@ -36,14 +38,15 @@
         <a class="imprint" href="imprint.html">Impressum</a>
     </div>
     <span onclick="showDropdown()" id="showIcon" class="hamburgerIcon">&#9776;</span>
-    <span onclick="HideDropdown()" id="hideIcon" class="hamburgerIcon d-none">&#9776;</span>
+    <span onclick="hideDropdown()" id="hideIcon" class="hamburgerIcon d-none">&#9776;</span>
     <div id="dropDownMenu" class="dropDownMenu" style="transform: translateY(-150%)">
-        <a href="../html/board.html">Board</a>
-        <a href="../html/backlog.html">Backlog</a>
-        <a href="../html/task.html">Add Task</a>
-        <a href="#">Help</a>
-        <a href="../html/login-submit.html">Login</a>
-        <a href="#" onclick="logout()">Log Out</a>
-        <a href="imprint.html">Impressum</a>
+        <div id="mobileLinks">
+            <a href="../html/board.html">Board</a>
+            <a href="../html/backlog.html">Backlog</a>
+            <a href="../html/task.html">Add Task</a>
+            <a href="#">Help</a>
+            <a href="imprint.html">Impressum</a>
+        </div>
+        <a id="mobileLogoutBtn" href="#" onclick="logout()">Log Out</a>
     </div>
 </nav>
