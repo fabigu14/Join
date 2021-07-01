@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="../css/navbar.css">
-<script src="navbar.js"></script>
+
 <script>
     function showDropdown() {
-        document.getElementById('showIcon').classList.add('d-none');
-        document.getElementById('hideIcon').classList.remove('d-none');
-        document.getElementById('dropDownMenu').style = 'transform: translateY(-1%);';
-    }
+    document.getElementById('showIcon').classList.add('d-none');
+    document.getElementById('hideIcon').classList.remove('d-none');
+    document.getElementById('dropDownMenu').style = 'transform: translateY(-1%);';
+}
 
-    function hideNavDropdown() {
-        document.getElementById('showIcon').classList.remove('d-none');
-        document.getElementById('hideIcon').classList.add('d-none');
-        document.getElementById('dropDownMenu').style = 'transform: translateY(-150%);';
-    }
+function hideNavDropdown() {
+    document.getElementById('showIcon').classList.remove('d-none');
+    document.getElementById('hideIcon').classList.add('d-none');
+    document.getElementById('dropDownMenu').style = 'transform: translateY(-150%);';
+}
 </script>
 
 <nav id="navbar">
