@@ -1,6 +1,9 @@
 let currentDraggedElement;
 let currentDraggedCategory;
 
+/**
+ * load Json Array tasks
+ */
 async function initboard(){
     setQueryStringParameter('currentUser', currentUser['username']);
     await init();
@@ -8,7 +11,7 @@ async function initboard(){
 }
 /**
  * 
- * @param {}
+ * @param {array} - onload function / load tasks to the board containers
  */
 
 function updateHTML(){
@@ -25,9 +28,14 @@ function updateHTML(){
     let done = tasks.filter(t => t['state'] == 'done');
     update('done', done, 'doneColor');
     
-    
-    
 }
+
+/**
+ * 
+ * @param {id} containerID - load the id container
+ * @param {json} array - load the tasks
+ * @param {string} taskColor - load tasks color 
+ */
 
 function update(containerID, array, taskColor){
     
@@ -40,6 +48,13 @@ function update(containerID, array, taskColor){
 
 }
 
+/**
+ * 
+ * @param {*} element 
+ * @param {int} i 
+ * @param {*} taskColor - generate tasks color 
+ * @returns 
+ */
 
 function generateToDoHTML(element, i, taskColor){
     
@@ -51,6 +66,13 @@ function generateToDoHTML(element, i, taskColor){
     `;
 
 }
+
+/**
+ * allow to drag and drop tasks
+ * 
+ * @param {drag/drop} id 
+ * @param {drag/drop} category 
+ */
 
 function startdragging(id, category){
     // console.log(category);
@@ -64,6 +86,11 @@ function allowDrop(ev) {
   
 }
 
+/**
+ * 
+ * @param {*} category - this function allow to move the tasks
+ */
+
 function moveTo(category){
     console.log(currentDraggedCategory);
     let toMove = tasks.filter(element => element['state'] == currentDraggedCategory);
@@ -73,6 +100,10 @@ function moveTo(category){
 
 }
 
+/**
+ * 
+ * @param {elemen} id 
+ */
 
 function highlight(id){
 
@@ -85,6 +116,15 @@ function removehighlight(id){
     document.getElementById(id).classList.remove('grey-box-highlight');
 
 }
+
+/**
+ * this function shows the task container content 
+ * 
+ * @param {json} title 
+ * @param {json} description 
+ * @param {json} due_date 
+ * @param {json} users 
+ */
 function openContainer(title, description, due_date, users){
     
     let container = document.getElementById(`openContainer`);
@@ -109,14 +149,17 @@ function openContainer(title, description, due_date, users){
     container.classList.remove('d-none');
 
     
-    
-
 }
 
 function closeContainer(){
 
     document.getElementById('openContainer').classList.add('d-none');
 }
+
+/**
+ * 
+ * @param {json} id - delete the task from the board
+ */
 
 function deletetasks(id){
 
@@ -125,8 +168,8 @@ function deletetasks(id){
     
 }
 
-function setArray(key, id) {
-    localStorage.setItem(key, JSON.stringify(id));
+function setArray(key, array) {
+    localStorage.setItem(key, JSON.stringify(array));
 }
 
 function getArray(key) {
