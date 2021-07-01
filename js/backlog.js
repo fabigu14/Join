@@ -97,3 +97,25 @@ function drawBorder(result, i) {
     let backlogRows = document.getElementById('backlogRow_' + i);
     backlogRows.classList.add(result);
 }
+
+
+// let category = {
+//     'Development': 'development-bl',
+//     'Design': 'design-bl',
+//     'Testing': 'testing-bl',
+//     'Management': 'management-bl'
+// };
+
+// function checkCategory(element, i) {
+//     let bdCategory = element['category_value'];
+//     drawOpenContainerBorder(category[bdCategory], i);
+// }
+
+// function drawOpenContainerBorder(bdCategory, i) {
+//     document.getElementById('openContainer_' + i).classList.add(bdCategory);
+// }
+
+
+// id="openContainer_${i}" --- generateToDoHtml erstes div
+
+// checkCategory(element, i); ---update funktion erste schleife
