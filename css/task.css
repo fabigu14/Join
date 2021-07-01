@@ -85,11 +85,20 @@ input:focus {
     height: 167px;
 }
 
+.user-wrapper{
+    display: flex;
+    align-items: center;
+}
+
 .add-user {
     display: flex;
     position: relative;
     margin-bottom: 15px;
-    align-items: center;
+    align-items: flex-end;
+}
+
+#assigned_users{
+    display: flex;
 }
 
 #assigned_users img {
@@ -128,7 +137,7 @@ input:focus {
 .assign-user {
     background-color: white;
     padding: 10px;
-    position: absolute;
+    /* position: absolute; */
     top: 33px;
     left: -182px;
     box-shadow: 0px 0px 6px 1px #8080805e;
@@ -229,27 +238,8 @@ input:focus {
     z-index: 1;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    /* If you want dots under the hoverable text */
-}
-
-.tooltip .tooltip-text {
-    visibility: hidden;
-    width: fit-content;
-    background-color: #3e5d940f;
-    color: #00000091;
-    text-align: center;
-    padding: 5px 3px;
-    border-radius: 6px;
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
+.tooltip{
+    display: none;
 }
 
 @media(max-width: 1100px) {

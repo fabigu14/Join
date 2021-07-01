@@ -112,14 +112,17 @@
                     <label for="assigned">ASSIGNED TO</label>
                     <div class="finalize-task">
                         <div class="add-user">
-                            <div id="assigned_users">
+                            <div class="user-wrapper">
+                                <div id="assigned_users">
 
+                                </div>
+                                
+                                <div onclick="showUsersToAssign()" class="add-person crs-pointer">
+                                    
+                                    <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
+                                </div>
                             </div>
                             
-                            <div onclick="showUsersToAssign()" class="add-person crs-pointer">
-                                
-                                <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
-                            </div>
                             <div id="users_to_assign" class="assign-user display-none">
                                     
                             </div>
