@@ -14,47 +14,38 @@ async function initboard(){
 function updateHTML(){
     
     let toDo = tasks.filter(t => t['state'] == 'toDo');
-    update('toDo', toDo);
+    update('toDo', toDo, 'toDocolor');
 
     let inProgress = tasks.filter(t => t['state'] == 'inProgress');
-    update('inProgress', inProgress);
+    update('inProgress', inProgress, 'inProgressColor');
     
     let testing = tasks.filter(t => t['state'] == 'testing');
-    update('testing', testing);
+    update('testing', testing, 'testingColor');
     
     let done = tasks.filter(t => t['state'] == 'done');
-    update('done', done);
+    update('done', done, 'doneColor');
+    
     
     
 }
 
-function update(containerID, array){
+function update(containerID, array, taskColor){
     
     document.getElementById(containerID).innerHTML = '';
     for (let i = 0; i < array.length; i++) {
     let element = array[i];
-    document.getElementById(containerID).innerHTML += generateToDoHTML(element,i);
-
-    for (let j = 0; j < users.length; j++) {
-        const user = users[j];
-        
-    
-    
-    }
+    document.getElementById(containerID).innerHTML += generateToDoHTML(element,i,taskColor);
     
     }
 
 }
 
 
-
-
-
-function generateToDoHTML(element, i){
+function generateToDoHTML(element, i, taskColor){
     
-
+    
     console.log(element);
-    return `<div draggable="true" onclick="openContainer('${element['title']}', '${element['description']}', '${element['due_date']}', '${users['name']}')" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer design-bl">${element['title']}</div>
+    return `<div draggable="true" onclick="openContainer('${element['title']}', '${element['description']}', '${element['due_date']}', '${users['name']}')" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer ${taskColor}">${element['title']}</div>
             <div id="openContainer" class="openContainer  d-none">
             </div>
     `;
@@ -98,7 +89,7 @@ function openContainer(title, description, due_date, users){
     
     let container = document.getElementById(`openContainer`);
 
-    container.innerHTML = `<div class="infoBox design-bl">
+    container.innerHTML = `<div class="infoBox">
     <div class="headlinebox">
     <div class="headline"><h2>${title}</h2></div>
     <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
@@ -117,6 +108,9 @@ function openContainer(title, description, due_date, users){
     </div>`
     container.classList.remove('d-none');
 
+    
+    
+
 }
 
 function closeContainer(){
@@ -129,5 +123,12 @@ function deletetasks(id){
     tasks.splice(id, 1);
     updateHTML();
     
-    
+}
+
+function setArray(key, id) {
+    localStorage.setItem(key, JSON.stringify(id));
+}
+
+function getArray(key) {
+    return JSON.parse(localStorage.getItem(key)) || [];
 }

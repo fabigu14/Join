@@ -41,9 +41,10 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     border: 1px solid #ffffff;
     width: 168px;
-    height: 100px;
+    height: 110px;
     margin-top: 30px;
     border-radius: 10px;
     text-align: center;
@@ -57,25 +58,29 @@ h3 {
     
 }
 
-.development-bl {
+.taskContainer img{
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.toDocolor {
     border-left: 6px solid #1f1fa0;
 }
 
-.design-bl {
-    border-left: 6px solid green;
-}
-
-.testing-bl {
-    border-left: 6px solid yellow;
-}
-
-.management-bl {
+.inProgressColor {
     border-left: 6px solid red;
 }
 
-.default-bl {
-    border-left: 6px solid gray;
+.testingColor {
+    border-left: 6px solid yellow;
 }
+
+.doneColor {
+    border-left: 6px solid green;
+}
+
+
 
 .backlogUser {
     display: flex;
