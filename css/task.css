@@ -85,20 +85,24 @@ input:focus {
     height: 167px;
 }
 
-.user-wrapper{
+.user-wrapper {
     display: flex;
     align-items: center;
+    height: 65px;
 }
 
 .add-user {
     display: flex;
-    position: relative;
+    /* position: relative; */
     margin-bottom: 15px;
-    align-items: flex-end;
+    align-items: center;
+    height: 70px;
 }
 
-#assigned_users{
+#assigned_users {
     display: flex;
+    max-width: 300px;
+    overflow: auto;
 }
 
 #assigned_users img {
@@ -137,16 +141,27 @@ input:focus {
 .assign-user {
     background-color: white;
     padding: 10px;
-    /* position: absolute; */
-    top: 33px;
-    left: -182px;
+    position: fixed;
+    top: 21%;
+    left: 29%;
     box-shadow: 0px 0px 6px 1px #8080805e;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 257px;
+    width: 78vh;
+    height: 60vh;
     z-index: 2;
-    max-height: 145;
-    overflow: auto;
+    /* max-height: 145; */
+    /* overflow-y: scroll; */
+    /* display: flex; */
+    border-radius: 5px;
+}
+
+.ps-absolute{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .assign-user:hover {
@@ -180,7 +195,7 @@ input:focus {
     border-radius: 15px;
 }
 
-#create_btn:hover{
+#create_btn:hover {
     filter: brightness(1.3);
 }
 
@@ -238,8 +253,59 @@ input:focus {
     z-index: 1;
 }
 
-.tooltip{
+.tooltip {
     display: none;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    /* display: none; */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 2px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    /* display: block; */
+}
+
+.relative {
+    position: fixed;
 }
 
 @media(max-width: 1100px) {

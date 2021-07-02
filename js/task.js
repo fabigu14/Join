@@ -121,9 +121,9 @@ function loadUsersAssigned() {
 function generateAssignedHTML(user) {
     let html =
         `
-        <div class="has-tooltip">
+        <div class="tooltip">
             <img class="person-assigned" src="../` + user['img'] + `" alt="profile-img">
-            <span class="tooltip">${user['email']}</span>
+            <span class="tooltiptext">${user['email']}</span>
         </div>
         `;
     return html;
@@ -132,9 +132,9 @@ function generateAssignedHTML(user) {
 function generateHTML(user, index) {
     let html =
         `
-        <div class="has-tooltip">
+        <div class="tooltip">
         <img onclick="addToAssigned(${index})" class="person-assigned" src="../` + user['img'] + `" alt="profile-img">
-        <span class="tooltip">${user['email']}</span>
+        <span class="tooltiptext">${user['email']}</span>
         </div>
         `;
     return html;
