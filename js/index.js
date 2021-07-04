@@ -10,6 +10,7 @@ async function init() {
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
+    setTaskId();
     showAndHideLinks();
 }
 
@@ -21,7 +22,17 @@ function loadNav() {
 }
 
 function saveTasksToServer() {
+
+    setTaskId();
     backend.setItem('tasks', JSON.stringify(tasks));
+    
+}
+
+function setTaskId() {
+    for (let i = 0; i < tasks.length; i++) {
+        const task = tasks[i];
+        task['ID'] = i;
+    }
 }
 
 function saveUsersToServer() {

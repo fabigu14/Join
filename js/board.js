@@ -1,6 +1,6 @@
 let currentDraggedElement;
 let currentDraggedCategory;
-
+let currentDraggedTask;
 /**
  * load Json Array tasks
  */
@@ -45,7 +45,7 @@ function update(containerID, array, taskColor) {
     for (let i = 0; i < array.length; i++) {
         let element = array[i];
         document.getElementById(containerID).innerHTML += generateToDoHTML(element, i, taskColor);
-        // generateUsersHtml(element['assigned_users']);
+        generateUsersHtml(element['assigned_users'], element['ID']);
     }
 
 }
@@ -60,10 +60,27 @@ function update(containerID, array, taskColor) {
 
 function generateToDoHTML(element, i, taskColor) {
 
-
     console.log(element);
-    return `<div draggable="true" onclick="openContainer('${element['title']}', '${element['description']}', '${element['due_date']}', '${element['assigned_users']['0']['username']}')" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer ${taskColor}">${element['title']}</div>
-            <div id="openContainer" class="openContainer  d-none">
+    console.log(element['ID']);
+    return `<div draggable="true" onclick="openContainer(${element['ID']})" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer ${taskColor}">${element['title']}</div>
+            <div id="openContainer${element['ID']}" class="openContainer  d-none">
+    <div class="infoBox">
+    <div class="headlinebox">
+    <div class="headline"><h2>${element['title']}</h2></div>
+    <div onclick="closeContainer(${element['ID']})" class="image"><img src="/img/x-mark-16.png"></div>
+    </div>
+    <div class="descriptionContainer">${element['description']}</div>
+    <div class="date-section"><p>Deadline: ${element['due_date']}</p></div>
+    
+    <div class="assigned-container">
+    <div class="assignedUser"><p>Assigned To: <span id="users_assigned${element['ID']}"></span> </p></div>
+
+    <div class="profileImage">
+    <img src="../img/fabi.jpg" alt="profile-img"></div>
+    <div onclick="deletetasks()" class="deleteButton">
+    <button>Delete</button>
+    </div>
+    </div>
             </div>
     `;
 
@@ -127,45 +144,52 @@ function removehighlight(id) {
  * @param {json} due_date 
  * @param {json} users 
  */
-function openContainer(title, description, due_date, username) {
+function openContainer(id) {
 
-    let container = document.getElementById(`openContainer`);
+    let container = document.getElementById(`openContainer${id}`);
 
-    container.innerHTML = `<div class="infoBox">
-    <div class="headlinebox">
-    <div class="headline"><h2>${title}</h2></div>
-    <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
-    </div>
-    <div class="descriptionContainer">${description}</div>
-    <div class="date-section"><p>Deadline: ${due_date}</p></div>
+    // container.innerHTML = `<div class="infoBox">
+    // <div class="headlinebox">
+    // <div class="headline"><h2>${title}</h2></div>
+    // <div onclick="closeContainer()" class="image"><img src="/img/x-mark-16.png"></div>
+    // </div>
+    // <div class="descriptionContainer">${description}</div>
+    // <div class="date-section"><p>Deadline: ${due_date}</p></div>
     
-    <div class="assigned-container">
-    <div class="assignedUser"><p>Assigned To: <span id="users_assigned">${username}</span> </p></div>
+    // <div class="assigned-container">
+    // <div class="assignedUser"><p>Assigned To: <span id="users_assigned">${username}</span> </p></div>
 
-    <div class="profileImage">
-    <img src="../img/fabi.jpg" alt="profile-img"></div>
-    <div onclick="deletetasks()" class="deleteButton">
-    <button>Delete</button>
-    </div>
-    </div>`
+    // <div class="profileImage">
+    // <img src="../img/fabi.jpg" alt="profile-img"></div>
+    // <div onclick="deletetasks()" class="deleteButton">
+    // <button>Delete</button>
+    // </div>
+    // </div>`;
     container.classList.remove('d-none');
 
 
 }
 
-function generateUsersHtml(users) {
-    let userNames = document.getElementById('users_assigned');
+function generateUsersHtml(users, id) {
+    let userNames = document.getElementById(`users_assigned${id}`);
     console.log(users);
     userNames.innerHTML = '';
 
-    users.forEach(user => {
-        userNames.innerHTML += `${user}, `;
-    });
+    for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        if (i < users.length - 1) {
+            userNames.innerHTML += `${user['username']}, `;
+        }
+        else{
+            userNames.innerHTML += `${user['username']}`;
+        }
+
+    }
 }
 
-function closeContainer() {
+function closeContainer(id) {
 
-    document.getElementById('openContainer').classList.add('d-none');
+    document.getElementById(`openContainer${id}`).classList.add('d-none');
 }
 
 /**
