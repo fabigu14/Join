@@ -36,7 +36,7 @@ function renderBacklogRows(task, user, taskState) {
                         <img class="blUserImg" src="${user['img']}">
                         <div class="blUserData">
                             <span class="wrap-W">${user['name']}</span>
-                            <a class="wrap-W" href="#">${user['email']}</a>
+                            <a class="wrap-W" href="mailto:${user['email']}">${user['email']}</a>
                         </div>
                     </div>
                         <div class="blCategories">
