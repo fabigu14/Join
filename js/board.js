@@ -121,7 +121,7 @@ function moveTo(category) {
 
 /**
  * 
- * @param {element} id 
+ * @param {elemen} id 
  */
 
 function highlight(id) {
