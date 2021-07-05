@@ -67,7 +67,7 @@ function generateToDoHTML(element, i, taskColor) {
     <div class="infoBox">
     <div class="headlinebox">
     <div class="headline"><h2>${element['title']}</h2></div>
-    <div onclick="closeContainer(${element['ID']})" class="image"><img src="/img/x-mark-16.png"></div>
+    <div onclick="closeContainer(${element['ID']})" class="image"><img src="../img/x-mark-16.png"></div>
     </div>
     <div class="descriptionContainer">${element['description']}</div>
     <div class="date-section"><p>Deadline: ${element['due_date']}</p></div>
