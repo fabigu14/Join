@@ -63,8 +63,8 @@ function generateToDoHTML(element, i, taskColor) {
     console.log(element);
     console.log(element['ID']);
     return `<div draggable="true" onclick="openContainer(${element['ID']})" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer ${taskColor}">${element['title']}</div>
-            <div id="openContainer${element['ID']}" class="openContainer  d-none">
-    <div class="infoBox">
+            <div id="openContainer${element['ID']}" class="openContainer d-none">
+    <div class="infoBox" ${taskColor}>
     <div class="headlinebox">
     <div class="headline"><h2>${element['title']}</h2></div>
     <div onclick="closeContainer(${element['ID']})" class="image"><img src="../img/x-mark-16.png"></div>
@@ -121,7 +121,7 @@ function moveTo(category) {
 
 /**
  * 
- * @param {elemen} id 
+ * @param {element} id 
  */
 
 function highlight(id) {
