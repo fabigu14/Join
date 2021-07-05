@@ -6,34 +6,32 @@ async function initBacklog() {
 }
 
 function updateBacklog() {
-    clearBacklog();
+    let backlogContent = document.getElementById('backlogContent');
 
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
+
         for (let j = 0; j < task['assigned_users'].length; j++) {
             const user = task['assigned_users'][j];
-            backlogContent.innerHTML += renderBacklogRows(task, user);
-            setIdToRows();
-            setIdToCategory();
+            let taskState = task['state'];
+            taskState = taskState + 'Color';
+
+            backlogContent.innerHTML += renderBacklogRows(task, user, taskState);
         }
     }
 }
 
-/**
- * that clears the hole page
- */
-function clearBacklog() {
-    let backlogContent = document.getElementById('backlogContent');
-    backlogContent.innerHTML = '';
-}
 
 /**
- * @param {json} task - every separate task json of the tasks array
- * @param {json} user - users who were assigned to the task
+ * 
+ * @param {json} task  separate tasks
+ * @param {string} user each user of separate task 
+ * @param {string} taskState  the state attribute of every task
  * @returns 
  */
-function renderBacklogRows(task, user) {
-    return `<div class="backlogRows">
+function renderBacklogRows(task, user, taskState) {
+
+    return `<div class="backlogRows ${taskState}">
                     <div class="backlogUser">
                         <img class="blUserImg" src="${user['img']}">
                         <div class="blUserData">
@@ -48,74 +46,5 @@ function renderBacklogRows(task, user) {
                             <span class="wrap-W">${task['description']}</span>
                         </div>
                 </div>`;
+
 }
-
-/**
- * assign an id to the every separate task-row 
- */
-function setIdToRows() {
-    let rows = document.getElementsByClassName('backlogRows');
-    for (let i = 0; i < rows.length; i++) {
-        const row = rows[i];
-        row.setAttribute('id', 'backlogRow_'+ i);
-    }
-}
-
-/**
- * assign an id Attribute to the spans with the Category of the Tasks
- */
-function setIdToCategory() {
-    let blCategories = document.getElementsByClassName('blCategory');
-    for (let i = 0; i < blCategories.length; i++) {
-        const blCategory = blCategories[i];
-        blCategory.setAttribute('id', 'backlogCategory_' + i);
-        checkCategory(i);
-    }
-}
-
-let category = {
-    'Development': 'development-bl',
-    'Design': 'design-bl',
-    'Testing': 'testing-bl',
-    'Management': 'management-bl'
-};
-
-/**
- * 
- * @param {int} i - id of the current row 
- */
-function checkCategory(i) {
-    let blCategory = document.getElementById('backlogCategory_' + i).textContent;
-    drawBorder(category[blCategory], i);
-}
-
-/**
- * @param {string} result - the content of the category element
- * @param {int} i - the number of the id from the rows
- */
-function drawBorder(result, i) {
-    let backlogRows = document.getElementById('backlogRow_' + i);
-    backlogRows.classList.add(result);
-}
-
-
-// let category = {
-//     'Development': 'development-bl',
-//     'Design': 'design-bl',
-//     'Testing': 'testing-bl',
-//     'Management': 'management-bl'
-// };
-
-// function checkCategory(element, i) {
-//     let bdCategory = element['category_value'];
-//     drawOpenContainerBorder(category[bdCategory], i);
-// }
-
-// function drawOpenContainerBorder(bdCategory, i) {
-//     document.getElementById('openContainer_' + i).classList.add(bdCategory);
-// }
-
-
-// id="openContainer_${i}" --- generateToDoHtml erstes div
-
-// checkCategory(element, i); ---update funktion erste schleife
