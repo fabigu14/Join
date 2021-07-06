@@ -2,6 +2,8 @@ body {
     margin: 0;
     font-family: 'PT Sans', sans-serif !important;
     background-color: #fafafa;
+    display: flex;
+    justify-content: center;
 }
 
 .d-none {
