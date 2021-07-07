@@ -62,7 +62,7 @@ function generateToDoHTML(element, i, taskColor) {
 
     console.log(element);
     console.log(element['ID']);
-    return `<div draggable="true" onclick="openContainer(${element['ID']})" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer ${taskColor}">${element['title']}</div>
+    return `<div draggable="true" onclick="openContainer(${element['ID']}), '${taskColor}'" ondragstart="startdragging(${i}, '${element['state']}')" class="taskContainer ${taskColor}">${element['title']}</div>
             <div id="openContainer${element['ID']}" class="openContainer d-none">
     <div class="infoBox" ${taskColor}>
     <div class="headlinebox">
