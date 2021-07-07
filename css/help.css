@@ -1,0 +1,9 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.help-content{
+    width: 60%;
+    padding: 50px 0;
+}
