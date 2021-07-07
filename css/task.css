@@ -339,4 +339,12 @@ input:focus {
     .input-div{
         margin-top: 20px;
     }
+
+    .add-user{
+        margin-bottom: 25px;
+    }
+
+    .btns{
+        justify-content: center;
+    }
 }
