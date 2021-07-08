@@ -15,9 +15,9 @@ function goToSubmit() {
 
 function goToLogin() {
     setTimeout(() => {
-        document.getElementById('guestContainer').classList.remove('d-none');    
+        document.getElementById('guestContainer').classList.remove('d-none');
     }, 150);
-    
+
     document.getElementById('loginContainer').style = 'transform: translateY(0%)';
     document.getElementById('submitContainer').style = 'transform: translateY(100%)';
 }
@@ -66,12 +66,6 @@ function checkUserExists() {
 function addDefaultImg() {
     user['img'] = '../img/defaultUser.png';
 }
-
-
-// function deleteUser(name) {
-//     backend.deleteItem('users');
-//   }
-
 
 function loginAsGuest() {
     checkUserId('test');
