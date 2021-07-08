@@ -240,7 +240,7 @@ h3 {
     }
 
     .descriptionContainer {
-    width: 85%;
+    width: 90%;
     background-color: white;
     margin-left: 10px;
     height: 200px;
@@ -327,6 +327,21 @@ h3 {
         height: 40%;
     
     }
+
+    .descriptionContainer {
+        width: 86%;
+        background-color: white;
+        margin-left: 10px;
+        height: 200px;
+        border-radius: 10px;
+        padding-left: 20px;
+        word-break: break-word;
+        border: 2px solid #dfdfdf;
+        overflow: auto;
+        font-size: 20px;
+        padding: 10px;
+        
+        }
 
 
 }
