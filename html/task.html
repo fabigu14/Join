@@ -10,19 +10,38 @@
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
 <title>Add task</title>
+
+<!-- FAVICON -->
+<link rel="apple-touch-icon" sizes="57x57" href="../img/Favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/Favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/Favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/Favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/Favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/Favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/Favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/Favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/Favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../img/Favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/Favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../img/Favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/Favicon/favicon-16x16.png">
+<link rel="manifest" href="../img/Favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 </head>
 
 <body onload="initTask()">
 
-<div id="overlay" class="display-none" onclick="hideInputDropdown()">
+    <div id="overlay" class="display-none" onclick="hideInputDropdown()">
 
-</div>
+    </div>
     <div id="nav_placeholder">
 
     </div>
 
 
-    <div class="main-div">
+    <div onclick="hideNavDropdown()" class="main-div">
         <div>
             <h1>Add task</h1>
             <span class="subline">Learning Management System Project</span>
@@ -36,7 +55,7 @@
                         <input type="text" id="title" placeholder="Title" required>
                     </div>
                 </div>
-                <div class= input-div>
+                <div class=input-div>
                     <label for="due_date">DUE DATE</label>
                     <div class="input-field">
                         <input type="date" id="due_date" placeholder="date" required>
@@ -47,7 +66,7 @@
                 </div>
             </div>
 
-            
+
             <div class="input-row middle-row">
                 <div class="input-div">
                     <label for="category">CATEGORY</label>
@@ -67,7 +86,8 @@
                         <div id="testing" class="options" onclick="setSelection('Testing', 'category_value')">
                             <span>Testing</span>
                         </div>
-                        <div id="management" class="options bottom-element" onclick="setSelection('Management', 'category_value')">
+                        <div id="management" class="options bottom-element"
+                            onclick="setSelection('Management', 'category_value')">
                             <span>Management</span>
                         </div>
                     </div>
@@ -80,7 +100,7 @@
                     <div id="urgency" class="input-field">
                         <input type="text" id="urgency_value" placeholder="Urgency" required>
                         <div onclick="showInputDropdown('urgency')" class="img-div crs-pointer">
-                            <img  class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
+                            <img class="arrow-down" src="../img/chevron.png" alt="dropdown-arrow">
                         </div>
                     </div>
 
@@ -95,7 +115,7 @@
                             <span>High</span>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -108,23 +128,23 @@
                         <textarea name="description" id="description" cols="30" rows="8" required></textarea>
                     </div>
                 </div>
-                <div class= input-div>
+                <div class=input-div>
                     <label for="assigned">ASSIGNED TO</label>
                     <div class="finalize-task">
                         <div class="add-user">
                             <!-- <div class="user-wrapper"> -->
-                                <div id="assigned_users">
+                            <div id="assigned_users">
 
-                                </div>
-                                
-                                <div onclick="showUsersToAssign()" class="add-person crs-pointer">
-                                    
-                                    <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
-                                </div>
+                            </div>
+
+                            <div onclick="showUsersToAssign()" class="add-person crs-pointer">
+
+                                <img class="add-img" src="../img/icons8-plus.png" alt="profile-img" height="25px">
+                            </div>
                             <!-- </div> -->
-                            
+
                             <div id="users_to_assign" class="assign-user display-none">
-                                    
+
                             </div>
                         </div>
                         <div class="btns">
