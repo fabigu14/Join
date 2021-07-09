@@ -18,15 +18,16 @@ function initUsersToAssign() {
     }
 }
 
-function createTask() {
-
+function createTask(event) {
+    event.preventDefault();
     if (checkForInput(inputFields) && isUserAssigned()) {
 
         setValues();
         addToTasks();
         resetInput();
-        console.log('is created');
+        showSnackbar('snackbar_created');
     }
+    return false;
 }
 
 function isUserAssigned() {
@@ -34,10 +35,20 @@ function isUserAssigned() {
         return true;
     }
 
-    else{
-        alert("please assign User");
+    else {
+        showSnackbar('snackbar_user');
         return false;
     }
+}
+
+function showSnackbar(id) {
+    let snackbar = document.getElementById(id);
+
+    snackbar.className = "show";
+
+    setTimeout(() => {
+        snackbar.className = snackbar.className.replace("show", "");
+    }, 3000);
 }
 
 function setValues() {

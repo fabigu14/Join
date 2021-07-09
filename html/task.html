@@ -33,6 +33,9 @@
 
 <body onload="initTask()">
 
+    <div id="snackbar_created">Task is created</div>
+    <div id="snackbar_user">Please assign User</div>
+
     <div id="overlay" class="display-none" onclick="hideInputDropdown()">
 
     </div>
@@ -46,7 +49,7 @@
             <h1>Add task</h1>
             <span class="subline">Learning Management System Project</span>
         </div>
-        <form onsubmit="return false" class="add-task">
+        <form onsubmit="return createTask(event)" class="add-task">
 
             <div class="input-row">
                 <div>
@@ -149,7 +152,7 @@
                         </div>
                         <div class="btns">
                             <button class="crs-pointer" id="cancel_btn" onclick="resetInput()">CANCEL</button>
-                            <button class="crs-pointer" id="create_btn" onclick="createTask()">CREATE TASK</button>
+                            <button class="crs-pointer" id="create_btn" type="submit">CREATE TASK</button>
                         </div>
                     </div>
                 </div>
