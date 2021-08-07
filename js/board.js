@@ -76,7 +76,7 @@ function generateToDoHTML(element, i, taskColor) {
     <div class="assignedUser"><p>Assigned To: <span id="users_assigned${element['ID']}"></span> </p></div>
 
     <div class="profileImage">
-    <img src="../img/fabi.jpg" alt="profile-img"></div>
+    <img src="../img/defaultUser.png" alt="profile-img"></div>
     <div onclick="deletetasks()" class="deleteButton">
     <button>Delete</button>
     </div>
@@ -211,3 +211,5 @@ function setArray(key, array) {
 function getArray(key) {
     return JSON.parse(localStorage.getItem(key)) || [];
 }
+
+
