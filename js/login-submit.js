@@ -1,5 +1,13 @@
 let inputIds = ['name', 'username', 'email', 'password'];
 let user = {};
+let guest = {
+    'name': 'guest',
+    'username': 'guest',
+    'email': 'guest@mail.com',
+    'password': 'guest',
+    'img': '../img/defaultUser.png',
+    'ID': 999
+}
 let currentUserId;
 let checkedUserNumber;
 
@@ -29,8 +37,13 @@ function addUser() {
         clearInput(inputIds);
         users.push(user);
         saveUsersToServer();
-        console.log('created');
+        loginNewUser(user);
     }
+}
+
+function loginNewUser(currentUser){
+    window.location.href = '../html/board.html';
+        setArray('loggedUser', currentUser);
 }
 
 function userExists() {
@@ -68,8 +81,14 @@ function addDefaultImg() {
 }
 
 function loginAsGuest() {
-    checkUserId('test');
-    checkPassword(currentUserId, 'tes');
+    addGuest();
+    checkUserId('guest');
+    checkPassword(currentUserId, 'guest');
+}
+
+function addGuest(){
+
+    users.push(guest);
 }
 
 function login() {
@@ -95,12 +114,12 @@ function checkUserId(loginname) {
             checkedUserNumber++;
         }
     }
-    nonUserFound(checkedUserNumber);
+    noUserFound(checkedUserNumber);
 }
 
-function nonUserFound(checkedUserNumber) {
+function noUserFound(checkedUserNumber) {
     if (checkedUserNumber > 0) {
-        alert('User do not exist!');
+        alert('User does not exist!');
     }
 }
 

@@ -9,6 +9,7 @@ async function initTask() {
     setQueryStringParameter('currentUser', currentUser['username']);
     await init();
     initUsersToAssign();
+    assignCurrentUser(currentUser);
 }
 
 function initUsersToAssign() {
@@ -156,6 +157,17 @@ function addToAssigned(userIndex) {
     removeFromToAssign(userIndex);
     showUsersAssigned();
     hideInputDropdown();
+}
+
+function assignCurrentUser(currentUser) {
+    if (currentUser['ID'] == 999) {
+        usersAssigned.push(currentUser);
+        showUsersAssigned();
+    }
+    else {
+        addToAssigned(currentUser['ID']);
+    }
+    
 }
 
 function removeFromToAssign(userIndex) {

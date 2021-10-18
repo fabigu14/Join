@@ -11,6 +11,7 @@ async function init() {
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
     setTaskId();
+    setUserId();
     showAndHideLinks();
 }
 
@@ -35,7 +36,15 @@ function setTaskId() {
     }
 }
 
+function setUserId() {
+    for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        user['ID'] = i;
+    }
+}
+
 function saveUsersToServer() {
+    setUserId();
     backend.setItem('users', JSON.stringify(users));
 }
 
@@ -50,8 +59,7 @@ function clearInput(inputIds) {
 function setInputValues(inputFields, JsonToFill) {
     inputFields.forEach(inputField => {
         let currentField = document.getElementById(inputField);
-        let inputValue = currentField.value;
-        JsonToFill[inputField] = inputValue;
+        JsonToFill[inputField] = currentField.value;
     });
 }
 

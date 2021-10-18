@@ -50,9 +50,11 @@
 
             <div class="slideBox">
 
-                <form id="guestContainer" onsubmit="loginAsGuest(); return false"><input type="submit"
-                        value="Login as Guest" onforminput="loginAsGuest();"></form>
+                <!-- <form id="guestContainer" onsubmit="loginAsGuest(); return false"><input type="submit"
+                        value="Login as Guest"></form> -->
 
+
+                <button id="guestContainer" onclick="loginAsGuest()">Login as guest</button>
 
                 <form onsubmit="login(); return false" id="loginContainer" class="loginSubmitBox">
                     <h2 class="loginHeader">Anmelden</h2>
